@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-resume',
   standalone: false,
@@ -8,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './resume.component.css'
 })
 export class ResumeComponent {
-
+  constructor(private titleService: Title) {
+      this.titleService.setTitle("Suhaas-Resume");
+    }
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-portfolio',
   standalone: false,
@@ -8,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './portfolio.component.css'
 })
 export class PortfolioComponent {
-
+  constructor(private titleService: Title) {
+    this.titleService.setTitle("Suhaas-Portfolio");
+  }
 }
