@@ -27,6 +27,7 @@
     border-bottom: 1px solid #333;
     padding-bottom: 5px;
     margin-top: 20px;
+    color: rgb(32, 218, 165);
   }
   
   h3 {
@@ -114,7 +115,8 @@
     padding: 2px 6px;
     margin-right: 5px;
     font-size: 0.9em;
-    font-weight: bold;
+    /* font-weight: bold; */
+    /* background-color: #575555; */
   }
   
   .project-item {
@@ -149,4 +151,110 @@
     font-size: 0.9em;
     white-space: nowrap;
   }
+  
+  .education-header, .experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  
+  .date {
+    /* font-size: 0.9em; */
+    color: #838383;
+  }
+  
+  .certification-link {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .certification-link:hover {
+    background-color: #0056b3;
+    color: white;
+  }
+  
+
+  .publication-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    color: #333;
+    text-decoration: none;
+    margin-left: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .publication-link:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .publication-link .material-icons {
+    font-size: 14px;
+  }
+  
+  .section-nav {
+    position: sticky;
+    top: 0;
+    background-color: #1e1e1e;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-around;
+    z-index: 1000;
+  }
+  
+  .section-nav a {
+    color: #a0a0a0;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+  
+  .section-nav a:hover {
+    color: #ffffff;
+  }
+  
+
+  /* .resume-page > *:first-child {
+    margin-top: 0;
+  } */
+  
+  .resume-page {
+    padding-top: 5px;
+  }
+  
+  .resume-page {
+    position: relative;
+  }
+  
+  .download-button {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    /* background-color: #007bff; */
+    color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .download-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .download-button .material-icons {
+    font-size: 24px;
+  }
+  
   

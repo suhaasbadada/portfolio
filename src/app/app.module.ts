@@ -18,13 +18,13 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     NavComponent,
     HomeComponent,
     PortfolioComponent,
-    ResumeComponent,
-    ContactComponent
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ResumeComponent
   ],
   providers: [
     provideClientHydration(withEventReplay()),
