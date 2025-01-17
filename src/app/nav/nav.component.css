@@ -2,30 +2,54 @@
     display: flex;
     justify-content: center;
     width: 100%;
+    position: relative;
   }
   
   .custom-navbar {
-    background-color: #f8f9fa;
+    background-color: #1e1e1e;
     border-radius: 25px;
     padding: 10px;
     margin-top: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 500px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 450px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .custom-navbar .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
   }
   
   .custom-navbar .nav-link {
+    color: #a0a0a0;
     border-radius: 20px;
     padding: 8px 16px;
     margin: 0 5px;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
   }
   
   .custom-navbar .nav-link:hover {
-    background-color: #e9ecef;
+    background-color: #2c2c2c;
+    color: #ffffff;
   }
   
   .custom-navbar .nav-link.active {
-    background-color: #007bff;
-    color: white !important;
+    background-color: #3a3a3a;
+    color: #ffffff !important;
+  }
+  
+  .profile-image {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 30px;
   }
   
