@@ -27,7 +27,8 @@
     border-bottom: 1px solid #333;
     padding-bottom: 5px;
     margin-top: 20px;
-    color: rgb(32, 218, 165);
+    /* color: rgb(32, 218, 165); */
+    color: rgb(250, 87, 250);
   }
   
   h3 {
@@ -220,7 +221,14 @@
     color: #ffffff;
   }
   
-
+  .section-nav a.active,
+  .section-nav a:active {
+    background-color: #3a3a3a;
+    color: orange !important;
+  }
+  
+  
+  
   /* .resume-page > *:first-child {
     margin-top: 0;
   } */
@@ -256,5 +264,3 @@
   .download-button .material-icons {
     font-size: 24px;
   }
-  
-  
