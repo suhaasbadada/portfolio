@@ -1,0 +1,24 @@
+<div class="modal-header">
+    <h2 style="color:#121212">
+        <a *ngIf="project.url; else projectInProgress" href="{{project.url}}" target="_blank">{{project.name}}</a>
+        <ng-template #projectInProgress>{{project.name}} - Project in Progress</ng-template>
+    </h2>
+    <button class="btn-close" (click)="bsModalRef.hide()"></button>
+</div>
+
+<div class="modal-body">
+    <carousel>
+        <div *ngFor="let picture of project.pictures">
+            <slide><img src={{picture}} alt="slide" style="display: block; width: 100%;"></slide>
+        </div>
+    </carousel>
+    
+    <hr>
+    <div class="d-flex flex-wrap">
+        <div *ngFor="let tag of project.tags">
+            <div class="tag me-2 mb-1" style="background-color: #838383; color: #030d0b; padding: 4px 8px; border-radius: 2px; font-size: 0.8rem;">
+                <i>{{tag}}</i>
+            </div>
+        </div>
+    </div>
+</div>

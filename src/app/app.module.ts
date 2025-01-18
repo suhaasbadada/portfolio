@@ -11,7 +11,9 @@ import { ResumeComponent } from './resume/resume.component';
 import { ContactComponent } from './contact/contact.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { ProjectCardComponent } from './project-card/project-card.component';
-
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { ProjectModalComponent } from './project-modal/project-modal.component';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,12 +23,15 @@ import { ProjectCardComponent } from './project-card/project-card.component';
     PortfolioComponent,
     ContactComponent,
     ProjectCardComponent,
+    ProjectModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ResumeComponent
+    ResumeComponent,
+    ModalModule.forRoot(),
+    CarouselModule.forRoot()
   ],
   providers: [
     provideClientHydration(withEventReplay()),

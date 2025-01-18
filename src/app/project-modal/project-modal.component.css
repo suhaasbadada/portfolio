@@ -1,0 +1,4 @@
+::ng-deep .carousel-control-prev-icon,
+::ng-deep .carousel-control-next-icon {
+    background-color: #838383 !important;
+}
