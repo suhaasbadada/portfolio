@@ -221,13 +221,13 @@
     color: #ffffff;
   }
   
-  .section-nav a.active,
+  /* .section-nav a.active,
   .section-nav a:active {
     background-color: #3a3a3a;
     color: orange !important;
   }
   
-  
+   */
   
   /* .resume-page > *:first-child {
     margin-top: 0;
