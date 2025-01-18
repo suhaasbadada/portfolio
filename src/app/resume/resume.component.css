@@ -264,3 +264,8 @@
   .download-button .material-icons {
     font-size: 24px;
   }
+
+  .profile-image:hover {
+  transform: scale(1.1); /* Scale up the image slightly */
+  filter: brightness(1.2); /* Slightly brighten the image */
+}
