@@ -14,7 +14,8 @@ import { ProjectCardComponent } from './project-card/project-card.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { ProjectModalComponent } from './project-modal/project-modal.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
-
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,9 +23,9 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
     NavComponent,
     HomeComponent,
     PortfolioComponent,
-    ContactComponent,
     ProjectCardComponent,
-    ProjectModalComponent
+    ProjectModalComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +34,8 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
     ResumeComponent,
     ModalModule.forRoot(),
     CarouselModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     provideClientHydration(withEventReplay()),

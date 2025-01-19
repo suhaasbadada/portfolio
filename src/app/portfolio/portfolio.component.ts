@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Title } from '@angular/platform-browser';
 import { Project } from '../_models/Project';
 @Component({
   selector: 'app-portfolio',
@@ -23,8 +22,4 @@ export class PortfolioComponent {
     {id:1, name:'Loan Pay Analysis', year: 2020, summary: 'Initial step towards ML, worked with a Phd candidate from IIM Lucknow to analyze multiple datasets from different countries to correlate and predict an individual\'s capacity to repay loan', description: 'lorem ipsum', url: 'https://github.com/suhaasbadada/Loan-Pay-Analysis', pictures: ['assets/lpa1.png'], tags:['ML','Python','Jupyter']},
     {id:0, name:'Shop Management System', year: 2020, summary: 'Comprehensive DBMS for small-scale sellers and local distributors. It includes features for inventory management, order processing, customer tracking, and sales analysis', description: 'lorem ipsum', url: 'https://github.com/suhaasbadada/shop-management-system', pictures: ['assets/sms1.png','assets/sms2.png','assets/sms3.png','assets/sms4.png','assets/sms5.png','assets/sms6.png','assets/sms7.png','assets/sms8.png','assets/sms9.png'], tags:['PHP','MySQL','HTML','CSS']},
   ]
-  
-  constructor(private titleService: Title) {
-    this.titleService.setTitle("Suhaas-Portfolio");
-  }
 }

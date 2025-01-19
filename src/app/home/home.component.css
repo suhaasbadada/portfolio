@@ -45,7 +45,7 @@ body {
 
 .quote-box {
   background-color: #f9f9f9; /* Light background for the quote box */
-  border-left: 5px solid #ff7f00; /* Orange left border to highlight quote */
+  border-left: 5px solid rgba(255, 165, 0, 0.8); /* Orange left border to highlight quote */
   padding: 20px;
   margin: 20px 0;
   font-style: italic; /* Italic style for the quote */
@@ -134,7 +134,7 @@ h2 {
   bottom: 10px; /* Position it near the bottom */
   right: 20px; /* Position it near the right */
   font-size: 14px; /* Adjust the font size */
-  color: #666; /* Light gray color */
+  color: white; /* Light gray color */
   z-index: 1000; /* Ensure it stays above other content */
 }
 

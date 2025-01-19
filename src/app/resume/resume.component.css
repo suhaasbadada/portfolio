@@ -15,6 +15,7 @@
     width: 100%;
     /* font-family: Arial, sans-serif; */
     line-height: 1.6;
+    border-radius: 10px;
   }
   
   h1 {
@@ -28,7 +29,7 @@
     padding-bottom: 5px;
     margin-top: 20px;
     /* color: rgb(32, 218, 165); */
-    color: rgb(250, 87, 250);
+    color: #ff289e;
   }
   
   h3 {

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -8,9 +7,6 @@ import { Title } from '@angular/platform-browser';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  constructor(private titleService: Title) {
-    this.titleService.setTitle("Suhaas-Home");
-  }
 
   urls=[
     {name:"Linkedin",url:"https://www.linkedin.com/in/suhaasbadada/"},
