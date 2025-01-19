@@ -2,3 +2,8 @@
 ::ng-deep .carousel-control-next-icon {
     background-color: #838383 !important;
 }
+
+.btn-close {
+    color: white !important;
+  }
+  

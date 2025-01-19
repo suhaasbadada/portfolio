@@ -1,22 +1,27 @@
-<div class="modal-header">
-    <h2 style="color:#121212">
-        <a *ngIf="project.url; else projectInProgress" href="{{project.url}}" target="_blank">{{project.name}}</a>
+<div class="modal-header" style="background: linear-gradient(145deg, #1e1e1e, #3a3a3a);">
+    <h2 style="color:#f5f5f5;">
+        <p *ngIf="project.url; else projectInProgress" target="_blank" style="color: rgba(255, 165, 0, 0.8);">
+            {{project.name}}
+            <a href="{{project.url}}" target="_blank">
+                <img src="assets/github-logo.png" alt="GitHub" class="social-icon" style="width: 30px; height: 30px; margin-left: 5px;">
+            </a>
+        </p>        
         <ng-template #projectInProgress>{{project.name}} - Project in Progress</ng-template>
     </h2>
-    <button class="btn-close" (click)="bsModalRef.hide()"></button>
+    <button class="btn-close custom-close-btn btn-close-white" (click)="bsModalRef.hide()"></button>
 </div>
 
-<div class="modal-body">
+<div class="modal-body" style="background: linear-gradient(145deg, #1e1e1e, #3a3a3a);">
     <carousel>
         <div *ngFor="let picture of project.pictures">
             <slide><img src={{picture}} alt="slide" style="display: block; width: 100%;"></slide>
         </div>
     </carousel>
     
-    <hr>
+    <hr style="border-color: #FFA500;">
     <div class="d-flex flex-wrap">
         <div *ngFor="let tag of project.tags">
-            <div class="tag me-2 mb-1" style="background-color: #313131; color: #f5f5f5; padding: 4px 8px; border-radius: 10px; font-size: 0.8rem;">{{tag}}</div>
+            <div class="tag me-2 mb-1" style="background-color: #1e1e1e; color: #f5f5f5; padding: 4px 8px; border-radius: 10px; font-size: 0.8rem;">{{tag}}</div>
         </div>
     </div>
 </div>
