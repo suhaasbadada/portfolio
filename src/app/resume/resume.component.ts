@@ -32,6 +32,10 @@ export class ResumeComponent implements AfterViewInit {
   ];
 
   awards=[
+     {
+      name: 'Luddy Hackathon Fourth Edition Winner',
+      description: 'Won the said hackathon for building InnovAIte, an AI-powered innovation portal that uses the ReAct framework to evaluate and prioritize user-submitted ideas based on business impact, ROI, and strategic alignment. The platform includes a PowerBI analytics dashboard for tracking idea performance and supports data-driven decision-making for strategic innovation.'
+    },
     {
       name: 'Luddy Hackathon Third Edition Winner',
       description: 'Won the said hackathon for developing the Indiana Toxicity Watch platform, an interactive tool that tracks toxic chemical exposure, correlates health risks, and provides data-driven insights to help Indiana residents and policymakers make informed decisions on environmental health.'
