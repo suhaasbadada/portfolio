@@ -37,23 +37,23 @@ export class ResumeComponent implements AfterViewInit {
   awards = [
     {
       name: 'Luddy Hackathon Fourth Edition Winner',
-      description: 'Won the said hackathon for building InnovAIte...'
+      description: 'Won the said hackathon for building InnovAIte, an AI-powered innovation portal that uses the ReAct framework to evaluate and prioritize user-submitted ideas based on business impact, ROI, and strategic alignment. The platform includes a PowerBI analytics dashboard for tracking idea performance and supports data-driven decision-making for strategic innovation.'
     },
     {
       name: 'Vernon Clapp IDEA Competition Semifinalist',
-      description: 'Was one of the semifinalists for proposing MailMart...'
+      description: 'Was one of the semifinalists for proposing MailMart, a platform that curates and showcases personalized email offers in a user-friendly interface.'
     },
     {
       name: 'Luddy Hackathon Third Edition Winner',
-      description: 'Won the said hackathon for developing the Indiana Toxicity Watch...'
+      description: 'Won the said hackathon for developing the Indiana Toxicity Watch platform, an interactive tool that tracks toxic chemical exposure, correlates health risks, and provides data-driven insights to help Indiana residents and policymakers make informed decisions on environmental health.'
     },
     {
       name: 'MLH Hoya Hacks Google Cloud Track Winner',
-      description: 'Won the said hackathon for developing a machine learning-based diagnostic tool...'
+      description: 'Won the said hackathon for developing a machine learning-based diagnostic tool that analyzes user symptoms to predict potential diseases, offers precautionary measures, and provides nearby medical facility locations.'
     },
     {
       name: 'Typing Competition Luddy',
-      description: 'Awarded 1st place for fastest typing...'
+      description: 'Awarded 1st place for fastest typing during the Typing Competition at Luddy School of Informatics.'
     }
   ];
 
