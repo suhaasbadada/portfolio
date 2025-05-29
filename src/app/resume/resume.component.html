@@ -11,7 +11,7 @@
             <a href="#publications" class="nav-link">Publications</a>
             <a href="#awards" class="nav-link">Awards</a>
           </nav>          
-        <hr>
+        <hr style="border: 1px solid #ccc; margin: 10px 0;">
         <h1 style="font-size: x-large;">Suhaas Rao Badada</h1>
         <p style="font-size: 14px;">📍 Bloomington, IN, USA</p>
         <div class="contact-info">
@@ -38,7 +38,7 @@
              </div>
               <div class="education-header">
               <p><i>{{edu.degree}}</i></p>
-              <span style="color:rgba(255, 165, 0, 0.8)"><i>{{edu.grade}}</i></span>
+              <span class="edu-grade"><i>{{edu.grade}}</i></span>
              </div>
             </div>      
       </section>
@@ -199,7 +199,7 @@
             <h2>AWARDS</h2>
             <ul>
               <li *ngFor="let award of awards">
-                <span style="color:rgba(255, 165, 0, 0.8)">{{ award.name }}</span> - {{ award.description }}
+                <span class="edu-grade">{{ award.name }}</span> - {{ award.description }}
               </li>
             </ul>
           </section>          

@@ -21,7 +21,7 @@ export class ResumeComponent implements AfterViewInit {
       institution: 'Indiana University Bloomington',
       degree: 'Masters in Computer Science',
       duration: 'Aug 2024 - May 2026',
-      grade: '4 / 4'
+      grade: '3.95 / 4'
     },
     {
       institution: 'Vellore Institute of Technology',
@@ -32,9 +32,13 @@ export class ResumeComponent implements AfterViewInit {
   ];
 
   awards=[
-     {
+    {
       name: 'Luddy Hackathon Fourth Edition Winner',
       description: 'Won the said hackathon for building InnovAIte, an AI-powered innovation portal that uses the ReAct framework to evaluate and prioritize user-submitted ideas based on business impact, ROI, and strategic alignment. The platform includes a PowerBI analytics dashboard for tracking idea performance and supports data-driven decision-making for strategic innovation.'
+    },
+    {
+      name: 'Vernon Clapp IDEA Competition Semifinalist',
+      description: 'Was one of the semifinalists for proposing MailMart, a platform that curates and showcases personalized email offers in a user-friendly interface.'
     },
     {
       name: 'Luddy Hackathon Third Edition Winner',
