@@ -30,18 +30,24 @@
         </div>               
   
       <section id="education">
-        <h2>EDUCATION</h2>
-        <div class="education-item" *ngFor="let edu of education">
-            <div class="education-header">
-              <h3>{{edu.institution}}</h3>
-              <span class="date">{{edu.duration}}</span>
-             </div>
-              <div class="education-header">
-              <p><i>{{edu.degree}}</i></p>
-              <span class="edu-grade"><i>{{edu.grade}}</i></span>
-             </div>
-            </div>      
-      </section>
+  <h2>EDUCATION</h2>
+  <div 
+    class="education-item" 
+    *ngFor="let edu of education" 
+    (click)="openTranscript(edu.institution.includes('Indiana') ? 'IUB_transcript.pdf' : 'VIT_transcript.pdf')" 
+    style="cursor: pointer;"
+  >
+    <div class="education-header">
+      <h3>{{ edu.institution }}</h3>
+      <span class="date">{{ edu.duration }}</span>
+    </div>
+    <div class="education-header">
+      <p><i>{{ edu.degree }}</i></p>
+      <span class="edu-grade"><i>{{ edu.grade }}</i></span>
+    </div>
+  </div>
+</section>
+
   
       <section id="skills">
         <h2>TECHNICAL SKILLS</h2>
@@ -207,3 +213,10 @@
     </div>
   </div>
   
+
+<div class="pdf-modal" *ngIf="showTranscript">
+  <div class="pdf-modal-content">
+    <button class="close-button" (click)="closeTranscript()">✕</button>
+    <iframe [src]="showTranscript" frameborder="0"></iframe>
+  </div>
+</div>
