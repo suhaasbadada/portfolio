@@ -2,221 +2,220 @@
     <div class="resume-page">
         <a href="Suhaas_Resume.pdf" download class="download-button" title="Download Resume">
             <i class="material-icons">file_download</i>
-          </a>          
-          <nav class="section-nav">
-            <a href="#education" class="nav-link">Education</a>
-            <a href="#skills" class="nav-link">Skills</a>
-            <a href="#experience" class="nav-link">Experience</a>
-            <a href="#projects" class="nav-link">Projects</a>
-            <a href="#publications" class="nav-link">Publications</a>
-            <a href="#awards" class="nav-link">Awards</a>
-          </nav>          
+        </a>
+        
+        <div class="sticky-nav-container">
+            <nav class="section-nav">
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#publications" class="nav-link">Publications</a>
+                <a href="#awards" class="nav-link">Awards</a>
+            </nav>
+        </div>
+        
         <hr style="border: 1px solid #ccc; margin: 10px 0;">
         <h1 style="font-size: x-large;">Suhaas Rao Badada</h1>
         <p style="font-size: 14px;">📍 Bloomington, IN, USA</p>
         <div class="contact-info">
-        <a href="tel:812-803-0562" class="contact-item" title="Call">
-            <i class="material-icons">phone</i>
-        </a>
-        <a href="mailto:suhaasbadada.dev@gmail.com" class="contact-item" title="Email">
-            <i class="material-icons">email</i>
-        </a>
-        <a href="https://linkedin.com/in/suhaasbadada" target="_blank" class="contact-item" title="LinkedIn">
-          <img src="assets/linkedin-logo-bw.png" alt="LinkedIn" class="social-icon" style="width: 25px; height: 25px;">
-        </a>
-        <a href="https://github.com/suhaasbadada" target="_blank" class="contact-item" title="GitHub">
-          <img src="assets/github-logo.png" alt="LinkedIn" class="social-icon" style="width: 25px; height: 25px;">
-        </a>
-        </div>               
-  
-      <section id="education">
-  <h2>EDUCATION</h2>
-  <div 
-    class="education-item" 
-    *ngFor="let edu of education" 
-    (click)="openTranscript(edu.institution.includes('Indiana') ? 'IUB_transcript.pdf' : 'VIT_transcript.pdf')" 
-    style="cursor: pointer;"
-  >
-    <div class="education-header">
-      <h3>{{ edu.institution }}</h3>
-      <span class="date">{{ edu.duration }}</span>
-    </div>
-    <div class="education-header">
-      <p><i>{{ edu.degree }}</i></p>
-      <span class="edu-grade"><i>{{ edu.grade }}</i></span>
-    </div>
-  </div>
-</section>
-
-  
-      <section id="skills">
-        <h2>TECHNICAL SKILLS</h2>
-        <div class="skills-category">
-          <strong>Programming Languages</strong>
-          <em>
-                <span class="skill-box">C++</span>
-                <span class="skill-box">Python</span>
-                <span class="skill-box">C#</span>
-                <span class="skill-box">Java</span>
-                <span class="skill-box">GoLang</span>
-                <span class="skill-box">Typescript</span>
-            </em>
-        </div>
-        <div class="skills-category">
-          <strong>Frameworks</strong>
-          <em>
-            <span class="skill-box">Flask</span>
-            <span class="skill-box">ASP.NET</span>
-            <span class="skill-box">Angular</span>
-            <span class="skill-box">Gin</span>
-            <span class="skill-box">Langchain</span>
-           </em>
-        </div>
-        <div class="skills-category">
-          <strong>Database</strong>
-          <em>
-          <span class="skill-box">SQL</span>
-          <span class="skill-box">MongoDB</span>
-          <span class="skill-box">Firebase</span>
-        </em>
-        </div>
-        <div class="skills-category">
-          <strong>Machine Learning & AI</strong>
-          <em>
-          <span class="skill-box">Machine Learning</span>
-          <span class="skill-box">Data Science</span>
-          <span class="skill-box">Prompt Engineering</span>
-        </em>
-        </div>
-        <div class="skills-category">
-          <strong>Tools</strong>
-          <em>
-          <span class="skill-box">Git</span>
-          <span class="skill-box">SQL Server Management Studio</span>
-          <span class="skill-box">PowerBI</span>
-          <span class="skill-box">Azure ML Studio</span>
-        </em>
-        </div>
-        <div class="skills-category">
-          <strong>Certifications</strong>
-          <em>
-            <a *ngFor="let cert of certifications_urls" [href]="cert.url" target="_blank" class="skill-box certification-link">
-              {{ cert.name }}
+            <a href="tel:812-803-0562" class="contact-item" title="Call">
+                <i class="material-icons">phone</i>
             </a>
-          </em>
-          
+            <a href="mailto:suhaasbadada.dev@gmail.com" class="contact-item" title="Email">
+                <i class="material-icons">email</i>
+            </a>
+            <a href="https://linkedin.com/in/suhaasbadada" target="_blank" class="contact-item" title="LinkedIn">
+                <img src="assets/linkedin-logo-bw.png" alt="LinkedIn" class="social-icon" style="width: 25px; height: 25px;">
+            </a>
+            <a href="https://github.com/suhaasbadada" target="_blank" class="contact-item" title="GitHub">
+                <img src="assets/github-logo.png" alt="LinkedIn" class="social-icon" style="width: 25px; height: 25px;">
+            </a>
         </div>
-      </section>
-      
-      <section id="experience">
-        <h2>EXPERIENCE</h2>
-        <div class="experience-item">
-            <div class="experience-header">
-                <h3>Becton Dickinson</h3>
-                <span class="date">Jan 2023 – Jun 2023</span>
-              </div>
-          <p><i>Data Science Intern</i></p>
-          <ul>
-            <li>Engineered a customer engagement analytics platform for personalized product recommendations, leveraging machine learning for data-driven insights. Projected 15% lesser expenditure by focusing campaigns and events based on customer engagement levels and sales revenue boost of 20%.</li>
-            <li>Conducted rigorous data exploration, analysis, and validation to ensure data accuracy and reliability of more than 2 million records.</li>
-            <li>Streamlined data integration from 5+ sources to identify key performance indicators (KPIs) for effective customer segmentation and modeling.</li>
-            <li>Researched and implemented "Next Best Action" strategies to optimize business outcomes and enhance recommendation effectiveness.</li>
-          </ul>
-        </div>
-        <div class="experience-item">
-            <div class="experience-header">
-                <h3>Becton Dickinson</h3>
-                <span class="date">May 2022 – Jul 2022</span>
-              </div>
-          <p><i>Software Development Engineer Intern</i></p>
-          <ul>
-            <li>Designed and implemented a user-friendly portal enabling administrators to execute SQL queries for in-depth analysis of the formulary database, resulting in analysis results being delivered approximately 30% faster due to streamlined permissions.</li>
-            <li>Collaborated with cross-functional teams located across the USA and Chandigarh.</li>
-          </ul>
-        </div>
-      </section>
 
-        <section id="projects">
+        <section id="education" class="resume-section">
+            <h2>EDUCATION</h2>
+            <div 
+                class="education-item" 
+                *ngFor="let edu of education" 
+                (click)="openTranscript(edu.institution.includes('Indiana') ? 'IUB_transcript.pdf' : 'VIT_transcript.pdf')" 
+                style="cursor: pointer;"
+            >
+                <div class="education-header">
+                    <h3>{{ edu.institution }}</h3>
+                    <span class="date">{{ edu.duration }}</span>
+                </div>
+                <div class="education-header">
+                    <p><i>{{ edu.degree }}</i></p>
+                    <span class="edu-grade"><i>{{ edu.grade }}</i></span>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="resume-section">
+            <h2>TECHNICAL SKILLS</h2>
+            <div class="skills-category">
+                <strong>Programming Languages</strong>
+                <em>
+                    <span class="skill-box">C++</span>
+                    <span class="skill-box">Python</span>
+                    <span class="skill-box">C#</span>
+                    <span class="skill-box">Java</span>
+                    <span class="skill-box">GoLang</span>
+                    <span class="skill-box">Typescript</span>
+                </em>
+            </div>
+            <div class="skills-category">
+                <strong>Frameworks</strong>
+                <em>
+                    <span class="skill-box">Flask</span>
+                    <span class="skill-box">ASP.NET</span>
+                    <span class="skill-box">Angular</span>
+                    <span class="skill-box">Gin</span>
+                    <span class="skill-box">Langchain</span>
+                </em>
+            </div>
+            <div class="skills-category">
+                <strong>Database</strong>
+                <em>
+                    <span class="skill-box">SQL</span>
+                    <span class="skill-box">MongoDB</span>
+                    <span class="skill-box">Firebase</span>
+                </em>
+            </div>
+            <div class="skills-category">
+                <strong>Machine Learning & AI</strong>
+                <em>
+                    <span class="skill-box">Machine Learning</span>
+                    <span class="skill-box">Data Science</span>
+                    <span class="skill-box">Prompt Engineering</span>
+                </em>
+            </div>
+            <div class="skills-category">
+                <strong>Tools</strong>
+                <em>
+                    <span class="skill-box">Git</span>
+                    <span class="skill-box">SQL Server Management Studio</span>
+                    <span class="skill-box">PowerBI</span>
+                    <span class="skill-box">Azure ML Studio</span>
+                </em>
+            </div>
+            <div class="skills-category">
+                <strong>Certifications</strong>
+                <em>
+                    <a *ngFor="let cert of certifications_urls" [href]="cert.url" target="_blank" class="skill-box certification-link">
+                        {{ cert.name }}
+                    </a>
+                </em>
+            </div>
+        </section>
+
+        <section id="experience" class="resume-section">
+            <h2>EXPERIENCE</h2>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>Becton Dickinson</h3>
+                    <span class="date">Jan 2023 – Jun 2023</span>
+                </div>
+                <p><i>Data Science Intern</i></p>
+                <ul>
+                    <li>Engineered a customer engagement analytics platform for personalized product recommendations, leveraging machine learning for data-driven insights. Projected 15% lesser expenditure by focusing campaigns and events based on customer engagement levels and sales revenue boost of 20%.</li>
+                    <li>Conducted rigorous data exploration, analysis, and validation to ensure data accuracy and reliability of more than 2 million records.</li>
+                    <li>Streamlined data integration from 5+ sources to identify key performance indicators (KPIs) for effective customer segmentation and modeling.</li>
+                    <li>Researched and implemented "Next Best Action" strategies to optimize business outcomes and enhance recommendation effectiveness.</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>Becton Dickinson</h3>
+                    <span class="date">May 2022 – Jul 2022</span>
+                </div>
+                <p><i>Software Development Engineer Intern</i></p>
+                <ul>
+                    <li>Designed and implemented a user-friendly portal enabling administrators to execute SQL queries for in-depth analysis of the formulary database, resulting in analysis results being delivered approximately 30% faster due to streamlined permissions.</li>
+                    <li>Collaborated with cross-functional teams located across the USA and Chandigarh.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects" class="resume-section">
             <h2>PROJECTS</h2>
             <div class="project-item">
-              <h3>Am I Okay (MLH Hoya Hacks Winner)</h3>
-              <p class="project-skills">
-                <em>
-                  <span class="skill-box">Python</span>
-                  <span class="skill-box">Machine Learning</span>
-                  <span class="skill-box">Flask</span>
-                  <span class="skill-box">HTML</span>
-                  <span class="skill-box">CSS</span>
-                  <span class="skill-box">Google Cloud API</span>
-                </em>
-              </p>
-              <ul>
-                <li>Engineered a Machine Learning based software that predicts diseases based on symptoms, provides details, recommends medication, and offers location of the nearest top rated super specialty hospitals that treat it.</li>
-                <li>Evaluated and compared over 7 classification algorithms to determine the best performing model.</li>
-              </ul>
+                <h3>Am I Okay (MLH Hoya Hacks Winner)</h3>
+                <p class="project-skills">
+                    <em>
+                        <span class="skill-box">Python</span>
+                        <span class="skill-box">Machine Learning</span>
+                        <span class="skill-box">Flask</span>
+                        <span class="skill-box">HTML</span>
+                        <span class="skill-box">CSS</span>
+                        <span class="skill-box">Google Cloud API</span>
+                    </em>
+                </p>
+                <ul>
+                    <li>Engineered a Machine Learning based software that predicts diseases based on symptoms, provides details, recommends medication, and offers location of the nearest top rated super specialty hospitals that treat it.</li>
+                    <li>Evaluated and compared over 7 classification algorithms to determine the best performing model.</li>
+                </ul>
             </div>
             <div class="project-item">
-              <h3>ResuSight</h3>
-              <p class="project-skills">
-                <em>
-                  <span class="skill-box">Flask</span>
-                  <span class="skill-box">Strawberry GraphQL</span>
-                  <span class="skill-box">MongoDB</span>
-                  <span class="skill-box">OpenAI</span>
-                  <span class="skill-box">Langchain</span>
-                </em>
-              </p>
-              <ul>
-                <li>Developed an innovative interview preparation platform, leveraging OpenAI via Langchain which facilitates detailed resume analysis and generates customized interview questions based on resumes and job descriptions.</li>
-                <li>Aimed at helping candidates focus their efforts efficiently and save precious time.</li>
-              </ul>
+                <h3>ResuSight</h3>
+                <p class="project-skills">
+                    <em>
+                        <span class="skill-box">Flask</span>
+                        <span class="skill-box">Strawberry GraphQL</span>
+                        <span class="skill-box">MongoDB</span>
+                        <span class="skill-box">OpenAI</span>
+                        <span class="skill-box">Langchain</span>
+                    </em>
+                </p>
+                <ul>
+                    <li>Developed an innovative interview preparation platform, leveraging OpenAI via Langchain which facilitates detailed resume analysis and generates customized interview questions based on resumes and job descriptions.</li>
+                    <li>Aimed at helping candidates focus their efforts efficiently and save precious time.</li>
+                </ul>
             </div>
             <div class="project-item">
-              <h3>VocabCards</h3>
-              <p class="project-skills">
-                <em>
-                  <span class="skill-box">Angular</span>
-                  <span class="skill-box">ASP.NET</span>
-                  <span class="skill-box">SQL</span>
-                  <span class="skill-box">MaterialUI</span>
-                  <span class="skill-box">Firebase</span>
-                  <span class="skill-box">Azure</span>
-                </em>
-              </p>
-              <ul>
-                <li>Created a personalized vocabulary learning platform for GRE aspirants, a full stack project, incorporating progress tracking features and gamified elements.</li>
-                <li>Led to 30% weekly new user registrations and positive feedback from 90% of participants during user testing.</li>
-              </ul>
+                <h3>VocabCards</h3>
+                <p class="project-skills">
+                    <em>
+                        <span class="skill-box">Angular</span>
+                        <span class="skill-box">ASP.NET</span>
+                        <span class="skill-box">SQL</span>
+                        <span class="skill-box">MaterialUI</span>
+                        <span class="skill-box">Firebase</span>
+                        <span class="skill-box">Azure</span>
+                    </em>
+                </p>
+                <ul>
+                    <li>Created a personalized vocabulary learning platform for GRE aspirants, a full stack project, incorporating progress tracking features and gamified elements.</li>
+                    <li>Led to 30% weekly new user registrations and positive feedback from 90% of participants during user testing.</li>
+                </ul>
             </div>
-          </section>
-  
-          <section id="publications">
+        </section>
+
+        <section id="publications" class="resume-section">
             <h2>PUBLICATIONS</h2>
             <p>
-              "Predicting Cardiovascular Disease (CVD) Risk Over Time Utilising Multifaceted Health and Lifestyle Parameters", International Journal of Science and Research, 2023
-              <a href="https://www.ijsr.net/getabstract.php?paperid=SR23911102627" target="_blank" class="publication-link" title="View Publication">
-                <i class="material-icons">open_in_new</i>
-              </a>
+                "Predicting Cardiovascular Disease (CVD) Risk Over Time Utilising Multifaceted Health and Lifestyle Parameters", International Journal of Science and Research, 2023
+                <a href="https://www.ijsr.net/getabstract.php?paperid=SR23911102627" target="_blank" class="publication-link" title="View Publication">
+                    <i class="material-icons">open_in_new</i>
+                </a>
             </p>
-          </section>
-          
+        </section>
 
-          <section id="awards">
+        <section id="awards" class="resume-section">
             <h2>AWARDS</h2>
             <ul>
-              <li *ngFor="let award of awards">
-                <span class="edu-grade">{{ award.name }}</span> - {{ award.description }}
-              </li>
+                <li *ngFor="let award of awards">
+                    <span class="edu-grade">{{ award.name }}</span> - {{ award.description }}
+                </li>
             </ul>
-          </section>          
-      
+        </section>
     </div>
-  </div>
-  
+</div>
 
 <div class="pdf-modal" *ngIf="showTranscript">
-  <div class="pdf-modal-content">
-    <button class="close-button" (click)="closeTranscript()">✕</button>
-    <iframe [src]="showTranscript" frameborder="0"></iframe>
-  </div>
+    <div class="pdf-modal-content">
+        <button class="close-button" (click)="closeTranscript()">✕</button>
+        <iframe [src]="showTranscript" frameborder="0"></iframe>
+    </div>
 </div>

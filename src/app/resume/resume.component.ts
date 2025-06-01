@@ -1,6 +1,7 @@
 import { Component, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser'
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+
 @Component({
   selector: 'app-resume',
   templateUrl: './resume.component.html',
@@ -59,7 +60,6 @@ export class ResumeComponent implements AfterViewInit {
 
   showTranscript: SafeResourceUrl | null = null;
 
-
   ngAfterViewInit() {
     if (this.resumeContainer) {
       this.setupSmoothScrolling();
@@ -74,13 +74,18 @@ export class ResumeComponent implements AfterViewInit {
         const targetId = link.getAttribute('href')?.substring(1) ?? '';
         const targetElement = document.getElementById(targetId);
         if (targetElement) {
-          targetElement.scrollIntoView({ behavior: 'smooth' });
+          const offset = 80; // Offset for sticky header
+          const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+          window.scrollTo({
+            top: elementPosition - offset,
+            behavior: 'smooth'
+          });
         }
       });
     });
   }
 
-   openTranscript(fileName: string) {
+  openTranscript(fileName: string) {
     const safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(`assets/${fileName}`);
     this.showTranscript = safeUrl;
   }
@@ -88,6 +93,4 @@ export class ResumeComponent implements AfterViewInit {
   closeTranscript() {
     this.showTranscript = null;
   }
-
-
 }
