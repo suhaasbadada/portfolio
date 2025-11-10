@@ -2,16 +2,15 @@
     display: flex;
     justify-content: center; 
     align-items: center; 
-    background-color: #1e1e1e;
-    color: #f5f5f5;
+    background-color: rgba(255,255,255,0.04);
+    color: var(--text, #f5f5f5);
     padding: 4px 8px;
     border-radius: 10px;
     font-size: 0.8rem;
 }
 
 .card {
-    box-shadow: 0 0 20px #1e1e1e !important;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
 }
 
 /* .card.shadow {
@@ -19,11 +18,40 @@
                 -8px -8px 16px rgba(255, 255, 255, 0.05);
 } */
 
-.card.shadow:hover {
-    transform: translateY(-5px);
-    box-shadow: 
-        0 0 10px rgba(255, 255, 255, 0.2),
-        0 0 20px rgba(255, 255, 255, 0.15),
-        0 10px 20px #ffffff !important;
+/* translucent frosted project card */
+.project-card {
+    max-width: 350px;
+    min-width: 350px;
+    min-height: 230px;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.04);
+    backdrop-filter: blur(6px) saturate(120%);
+    -webkit-backdrop-filter: blur(6px) saturate(120%);
+    box-shadow: 0 6px 22px rgba(2,6,23,0.6);
+}
+
+.project-card::after {
+    /* faint gradient tint to match CTA but very subtle */
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed));
+    opacity: 0.035;
+    mix-blend-mode: screen;
+}
+
+.project-card-body { padding: 18px; }
+.project-card-title { color: var(--text, #e0e0e0); font-size: 1.05rem; margin-bottom: 6px; }
+.project-card-text { color: var(--muted, #b3b3b3); font-size: 0.9rem; }
+.project-card-footer { background: transparent; border-top: none; padding: 12px 10px; }
+.project-card-year { position: absolute; top: 10px; right: 12px; color: rgba(255,255,255,0.6); font-size: .85rem; }
+
+.project-card.shadow:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(12,34,52,0.5), 0 6px 18px rgba(14,165,164,0.06);
 }
 

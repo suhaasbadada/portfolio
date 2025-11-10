@@ -1,17 +1,14 @@
-<div class="card shadow text-center" style="max-width: 350px; min-width: 350px; background: linear-gradient(145deg, #1e1e1e, #3a3a3a); border: none; border-radius: 8px; min-height: 230px;" (click)="OpenProjectModal()">
-    <div class="card-body">
-        <p class="card-title" style="color: #e0e0e0; font-size: large;"><i>{{project.name}}</i></p>
-        <p class="card-text" style="color: #b3b3b3; font-size: smaller;">{{project.summary}}.</p>
-        <!-- <button class="btn btn-primary" style="background-color: #6c4fbb; border: none; border-radius: 50%;" (click)="OpenProjectModal()">i</button> -->
+<div class="card shadow project-card text-center" (click)="OpenProjectModal()">
+    <div class="card-body project-card-body">
+        <p class="card-title project-card-title"><i>{{project.name}}</i></p>
+        <p class="card-text project-card-text">{{project.summary}}.</p>
     </div>
-    <div class="card-footer" style="background-color: rgba(255, 255, 255, 0.1); border-top: none;">
+    <div class="card-footer project-card-footer">
         <div class="d-flex flex-wrap justify-content-center">
             <div *ngFor="let tag of project.tags">
-                <div class="tag me-2 mb-1" style="background-color: #313131; color: #f5f5f5; padding: 4px 8px; border-radius: 10px; font-size: 0.8rem;">{{tag}}</div>
+                <div class="tag me-2 mb-1">{{tag}}</div>
             </div>
         </div>
     </div>
-    <div class="year" style="position: absolute; top: 10px; right: 10px; color: #a0a0a0; font-size: small;">
-        {{project.year}}
-    </div>
+    <div class="year project-card-year">{{project.year}}</div>
 </div>
