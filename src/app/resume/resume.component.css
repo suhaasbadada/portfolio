@@ -71,10 +71,18 @@
 }
 
 .section-nav a:hover {
-  color: #4a8fe7;
+  background: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 .section-nav a.active {
-  color: #4a8fe7;
+  background: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
   font-weight: 500;
 }
 
@@ -116,12 +124,13 @@
 
 .resume-side-panel .side-nav a:hover,
 .resume-side-panel .side-nav a.active {
-  color: var(--primary, #4a8fe7);
+  background: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
   font-weight: 600;
 }
-
-/* side panel underline animation */
-
 
 /* hide the side panel on small screens and fall back to the in-page sticky nav */
 @media (max-width: 900px) {
@@ -143,10 +152,15 @@ h1 {
 
 h2 {
   font-size: 20px;
-  border-bottom: 2px solid #4a8fe7;
+  border-bottom: 2px solid;
+  border-image: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed)) 1;
   padding-bottom: 8px;
   margin-top: 25px;
-  color: #4a8fe7;
+  background: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
   font-weight: 500;
   letter-spacing: 0.5px;
 }
@@ -154,7 +168,7 @@ h2 {
 h3 {
   font-size: 18px;
   margin-bottom: 5px;
-  color: #ffffff;
+  color: #ffffff; /* Red color for company names */
   font-weight: 500;
 }
 
@@ -173,15 +187,20 @@ h3 {
   height: 36px;
   border-radius: 50%;
   background-color: #2d2d2d;
-  color: #4a8fe7;
+  background: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
 .contact-item:hover {
-  background-color: #4a8fe7;
+  background: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed));
   color: white;
   transform: translateY(-2px);
+  -webkit-text-fill-color: white;
 }
 
 .contact-item .material-icons {
@@ -223,8 +242,9 @@ ul li {
 .experience-item:hover, 
 .project-item:hover {
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(74, 143, 231, 0.1);
-  border-left-color: #4a8fe7;
+  box-shadow: 0 5px 15px rgba(14, 165, 164, 0.1);
+  border-left-color: transparent;
+  border-image: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed)) 1;
 }
 
 .education-header, 
@@ -258,7 +278,7 @@ ul li {
 }
 
 .skill-box:hover {
-  background-color: #4a8fe7;
+  background: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed));
   color: white;
   transform: translateY(-2px);
 }
@@ -282,7 +302,7 @@ ul li {
 }
 
 .certification-link:hover {
-  background-color: #4a8fe7;
+  background: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed));
   color: white;
 }
 
@@ -294,16 +314,21 @@ ul li {
   height: 24px;
   border-radius: 50%;
   background-color: #333;
-  color: #4a8fe7;
+  background: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
   text-decoration: none;
   margin-left: 8px;
   transition: all 0.3s ease;
 }
 
 .publication-link:hover {
-  background-color: #4a8fe7;
+  background: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed));
   color: white;
   transform: scale(1.1);
+  -webkit-text-fill-color: white;
 }
 
 .publication-link .material-icons {
@@ -315,7 +340,11 @@ ul li {
   top: 15px;
   right: 15px;
   background-color: #333;
-  color: #4a8fe7;
+  background: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
   border-radius: 50%;
   width: 36px;
   height: 36px;
@@ -327,9 +356,10 @@ ul li {
 }
 
 .download-button:hover {
-  background-color: #4a8fe7;
+  background: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed));
   color: white;
   transform: scale(1.1);
+  -webkit-text-fill-color: white;
 }
 
 .download-button .material-icons {
@@ -337,7 +367,11 @@ ul li {
 }
 
 .edu-grade {
-  color: #4a8fe7;
+  background: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
   font-weight: 500;
 }
 
@@ -490,14 +524,14 @@ section {
 
 /* Style for the Download Resume link in side panel */
 .download-resume-link {
-    background-color: #4a8fe7 !important;
+    background-color: var(--accent, #7c3aed) !important;
     color: white !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     gap: 6px !important;
     padding: 8px 12px !important;
-    margin-top: 5px !important; /* Reduced gap */
+    margin-top: 5px !important;
     margin-bottom: 5px !important;
     border-radius: 6px !important;
     transition: all 0.3s ease !important;
@@ -505,22 +539,22 @@ section {
     font-size: 14px !important;
     text-align: center !important;
     white-space: nowrap !important;
-    width: 100% !important; /* Make it full width of side panel */
-    box-sizing: border-box !important; /* Include padding in width */
+    width: 100% !important;
+    box-sizing: border-box !important;
 }
 
 .download-resume-link:hover {
-    background-color: #3a7bd5 !important;
+    background-color: #6b2bd6 !important;
     color: white !important;
     transform: translateY(-2px) !important;
-    box-shadow: 0 4px 12px rgba(74, 143, 231, 0.3) !important;
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.4) !important;
 }
 
 .download-resume-link .material-icons {
     font-size: 16px !important;
+    color: white !important;
 }
 
-/* Adjust side panel nav spacing */
 .resume-side-panel .side-nav {
     display: flex;
     flex-direction: column;
