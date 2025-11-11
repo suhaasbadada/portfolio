@@ -110,7 +110,7 @@ textarea.form-control.invalid {
 button.btn {
   width: 100%;
   padding: 14px;
-  background: linear-gradient(135deg, #4a8fe7, #3a7bd5);
+  background: linear-gradient(135deg, var(--primary, #0ea5a4), var(--accent, #7c3aed));
   color: white;
   border: none;
   border-radius: 6px;
@@ -128,7 +128,7 @@ button.btn:disabled {
 }
 
 button.btn:not(:disabled):hover {
-  background: linear-gradient(135deg, #3a7bd5, #4a8fe7);
+  background: linear-gradient(135deg, var(--primary, #0ea5a4), var(--accent, #7c3aed));
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(74, 143, 231, 0.3);
 }

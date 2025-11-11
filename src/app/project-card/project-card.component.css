@@ -52,7 +52,19 @@
     flex-direction: column;
     gap: 8px;
 }
-.project-card-title { color: var(--text, #e0e0e0); font-size: 1.05rem; margin: 0; }
+.project-card-title {
+    color: var(--text, #e0e0e0);
+    font-size: 1.05rem;
+    margin: 0;
+    /* Add gradient text with higher opacity for better visibility */
+    background: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    opacity: 1; /* Increased from 0.9 to 1 for maximum visibility */
+    font-weight: 600; /* Slightly bolder to enhance the color */
+}
 .project-card-text { color: var(--muted, #b3b3b3); font-size: 0.9rem; flex: 1 1 auto; overflow-wrap: anywhere; }
 .project-card-footer { background: transparent; border-top: none; padding: 12px 10px; flex-shrink: 0; }
 .project-card-year { position: absolute; top: 10px; right: 12px; color: rgba(255,255,255,0.6); font-size: .85rem; }
@@ -72,3 +84,29 @@
     }
 }
 
+.project-card-title {
+    color: var(--text, #e0e0e0);
+    font-size: 1.05rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.project-card-title i {
+    background: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    opacity: 0.95;
+    /* font-weight: 600; */
+}
+
+.crown-emoji {
+    filter: none !important;
+    background: none !important;
+    -webkit-text-fill-color: initial !important;
+    color: initial !important;
+}

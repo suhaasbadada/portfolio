@@ -1,6 +1,9 @@
 <div class="card shadow project-card text-center" (click)="OpenProjectModal()">
     <div class="card-body project-card-body">
-        <p class="card-title project-card-title"><i>{{project.name}}</i></p>
+        <p class="card-title project-card-title">
+            <i>{{getProjectNameWithoutCrown(project.name)}}</i>
+            <span class="crown-emoji" *ngIf="hasCrown(project.name)">👑</span>
+        </p>
         <p class="card-text project-card-text">{{project.summary}}.</p>
     </div>
     <div class="card-footer project-card-footer">

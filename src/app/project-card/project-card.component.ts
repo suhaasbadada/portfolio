@@ -27,4 +27,11 @@ export class ProjectCardComponent {
 
     this.bsModalRef=this.modalService.show(ProjectModalComponent,modalOptions);
   }
+
+  getProjectNameWithoutCrown(projectName: string): string {
+    return projectName.replace(' 👑', '');
+  }
+  hasCrown(projectName: string): boolean {
+    return projectName.includes('👑');
+  }
 }
