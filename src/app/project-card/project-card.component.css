@@ -26,8 +26,8 @@
     border-radius: 12px;
     position: relative;
     overflow: visible; /* allow content to flow if it needs more space */
-    background: rgba(255,255,255,0.02);
-    border: 1px solid rgba(255,255,255,0.04);
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.05);
     backdrop-filter: blur(6px) saturate(120%);
     -webkit-backdrop-filter: blur(6px) saturate(120%);
     box-shadow: 0 6px 22px rgba(2,6,23,0.6);
@@ -42,7 +42,7 @@
     inset: 0;
     pointer-events: none;
     background: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed));
-    opacity: 0.035;
+    opacity: 0.055;
     mix-blend-mode: screen;
 }
 

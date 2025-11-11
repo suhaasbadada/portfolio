@@ -267,12 +267,43 @@ h1 {
 .home-hero { padding: 40px 60px; background: transparent; display: flex; align-items: center; justify-content: center; min-height: calc(100vh - 140px); }
 .hero-inner { display:flex; align-items:center; gap:60px; max-width:1200px; margin:0 auto; }
 .hero-left { flex:0 0 320px; display:flex; justify-content:center }
-.hero-avatar { width: 260px; height:260px; border-radius:50%; object-fit:cover; border:8px solid #fff; box-shadow: 0 20px 60px rgba(11,37,69,0.08); }
+.hero-avatar { 
+  width: 260px; 
+  height:260px; 
+  border-radius:50%; 
+  object-fit:cover; 
+  /* Remove all borders and outlines, keep only background shadow */
+  border: none;
+  outline: none;
+  box-shadow: 
+    0 20px 60px rgba(14, 165, 164, 0.3), /* Outer glow */
+    0 10px 30px rgba(124, 58, 237, 0.2); /* Accent color shadow */
+  transition: all 0.3s ease;
+}
+.hero-avatar:hover {
+  box-shadow: 
+    0 25px 80px rgba(14, 165, 164, 0.4),
+    0 15px 40px rgba(124, 58, 237, 0.3);
+  transform: scale(1.05);
+}
 .hero-location { margin-top:14px; display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; background: rgba(11,37,69,0.03); color:var(--muted); font-weight:600; }
 .hero-location .material-icons { font-size:18px; color:var(--primary); margin-top:2px }
 .hero-right { flex:1 }
 .intro-small { color: var(--primary); font-weight:600; margin:0 0 8px 0 }
-.hero-name { font-size:64px; margin:0 0 12px 0; color:var(--text); font-weight:800; letter-spacing:-1px }
+.hero-name {
+  font-size: 64px;
+  margin: 0 0 12px 0;
+  font-weight: 800;
+  letter-spacing: -1px;
+  display: inline-block;
+  /* Original gradient with element opacity */
+  background: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  opacity: 0.8; /* Reduce overall intensity */
+}
 .hero-sub { color:var(--muted); font-size:18px; max-width:720px; line-height:1.6 }
 .hero-cta { margin-top:24px; display:flex; align-items:center; gap:18px }
 .btn-cta { background: linear-gradient(90deg,var(--primary),var(--accent)); color:white; padding:12px 22px; border-radius:999px; box-shadow:0 10px 30px rgba(14,165,164,0.12); text-decoration:none }
