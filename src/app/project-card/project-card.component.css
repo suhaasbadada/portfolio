@@ -20,17 +20,19 @@
 
 /* translucent frosted project card */
 .project-card {
-    max-width: 350px;
-    min-width: 350px;
+    /* fixed width but flexible height so content isn't clipped */
+    width: 350px;
     min-height: 230px;
     border-radius: 12px;
     position: relative;
-    overflow: hidden;
+    overflow: visible; /* allow content to flow if it needs more space */
     background: rgba(255,255,255,0.02);
     border: 1px solid rgba(255,255,255,0.04);
     backdrop-filter: blur(6px) saturate(120%);
     -webkit-backdrop-filter: blur(6px) saturate(120%);
     box-shadow: 0 6px 22px rgba(2,6,23,0.6);
+    box-sizing: border-box;
+    flex: 0 0 350px; /* fixed width in flex containers */
 }
 
 .project-card::after {
@@ -44,14 +46,29 @@
     mix-blend-mode: screen;
 }
 
-.project-card-body { padding: 18px; }
-.project-card-title { color: var(--text, #e0e0e0); font-size: 1.05rem; margin-bottom: 6px; }
-.project-card-text { color: var(--muted, #b3b3b3); font-size: 0.9rem; }
-.project-card-footer { background: transparent; border-top: none; padding: 12px 10px; }
+.project-card-body {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.project-card-title { color: var(--text, #e0e0e0); font-size: 1.05rem; margin: 0; }
+.project-card-text { color: var(--muted, #b3b3b3); font-size: 0.9rem; flex: 1 1 auto; overflow-wrap: anywhere; }
+.project-card-footer { background: transparent; border-top: none; padding: 12px 10px; flex-shrink: 0; }
 .project-card-year { position: absolute; top: 10px; right: 12px; color: rgba(255,255,255,0.6); font-size: .85rem; }
 
 .project-card.shadow:hover {
     transform: translateY(-6px);
     box-shadow: 0 18px 40px rgba(12,34,52,0.5), 0 6px 18px rgba(14,165,164,0.06);
+}
+
+/* Responsive: allow cards to be full-width on smaller viewports */
+@media (max-width: 900px) {
+    .project-card {
+        width: 100% !important;
+        height: auto !important;
+        flex: 0 0 auto !important;
+        min-height: 160px;
+    }
 }
 

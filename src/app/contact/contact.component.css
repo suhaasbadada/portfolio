@@ -4,11 +4,31 @@
   max-width: 600px;
   margin: 100px auto 0;
   padding: 30px;
-  background-color: #1e1e1e;
   border-radius: 8px;
-  box-shadow: 0 0 15px #ffffff;
-  border: 1px solid #2a2a2a;
+  box-sizing: border-box;
+  color: var(--text, #e0e0e0);
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.04);
+  backdrop-filter: blur(6px) saturate(120%);
+  -webkit-backdrop-filter: blur(6px) saturate(120%);
+  box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+  position: relative;
 }
+
+/* subtle gradient tint overlay to match resume/project cards */
+.contact-form::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed));
+  opacity: 0.035;
+  mix-blend-mode: screen;
+  z-index: 0;
+}
+
+/* ensure form content sits above the tint overlay */
+.contact-form > * { position: relative; z-index: 1; }
 
 /* Title and separator */
 .contact-form h2 {
