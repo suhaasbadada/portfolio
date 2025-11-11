@@ -55,7 +55,7 @@ export class ResumeComponent implements AfterViewInit {
     },
     {
       name: 'Typing Competition Luddy (x2)',
-      description: 'Awarded 1st place for fastest typing during the Typing Competition at Luddy School of Informatics.'
+      description: 'Awarded 1st place (100+ WPM) for fastest typing during the Typing Competition at Luddy School of Informatics.'
     }
   ];
 

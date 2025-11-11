@@ -487,3 +487,42 @@ section {
     transform: translateY(0);
   }
 }
+
+/* Style for the Download Resume link in side panel */
+.download-resume-link {
+    background-color: #4a8fe7 !important;
+    color: white !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    padding: 8px 12px !important;
+    margin-top: 5px !important; /* Reduced gap */
+    margin-bottom: 5px !important;
+    border-radius: 6px !important;
+    transition: all 0.3s ease !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    width: 100% !important; /* Make it full width of side panel */
+    box-sizing: border-box !important; /* Include padding in width */
+}
+
+.download-resume-link:hover {
+    background-color: #3a7bd5 !important;
+    color: white !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(74, 143, 231, 0.3) !important;
+}
+
+.download-resume-link .material-icons {
+    font-size: 16px !important;
+}
+
+/* Adjust side panel nav spacing */
+.resume-side-panel .side-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Reduced gap between nav items */
+}
