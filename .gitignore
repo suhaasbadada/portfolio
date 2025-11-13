@@ -45,3 +45,5 @@ Thumbs.db
 .angular/
 
 environments/
+
+src/app/app.module.ts
