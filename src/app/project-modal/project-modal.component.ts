@@ -14,4 +14,9 @@ export class ProjectModalComponent {
   constructor(public bsModalRef: BsModalRef){
 
   }
+
+  isVideo(filePath: string): boolean {
+    const videoExtensions = ['.mp4', '.webm', '.ogg', '.mov', '.avi'];
+    return videoExtensions.some(ext => filePath.toLowerCase().endsWith(ext));
+}
 }
