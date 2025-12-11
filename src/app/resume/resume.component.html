@@ -1,6 +1,7 @@
 <div class="resume-container" #resumeContainer>
     <aside class="resume-side-panel">
         <nav class="side-nav">
+            <a href="#summary" class="nav-link">Summary</a> <!-- Added Summary link -->
             <a href="#education" class="nav-link">Education</a>
             <a href="#skills" class="nav-link">Skills</a>
             <a href="#experience" class="nav-link">Experience</a>
@@ -16,6 +17,7 @@
     <div class="resume-page">
         <div class="sticky-nav-container">
             <nav class="section-nav">
+                <a href="#summary" class="nav-link">Summary</a> <!-- Added Summary link -->
                 <a href="#education" class="nav-link">Education</a>
                 <a href="#skills" class="nav-link">Skills</a>
                 <a href="#experience" class="nav-link">Experience</a>
@@ -43,6 +45,16 @@
             </a>
         </div>
 
+        <!-- Added Summary Section -->
+        <section id="summary" class="resume-section">
+            <h2>SUMMARY</h2>
+            <div class="summary-content">
+                <p>Full-stack Software Engineer skilled in FastAPI, Next.js, ASP.NET MVC, and Angular with hands-on experience through internships,
+research work, and projects. Experienced in building scalable APIs, microservices, and data-driven applications that deliver real-world
+impact. Winner of multiple hackathons.</p>
+            </div>
+        </section>
+
         <section id="education" class="resume-section">
             <h2>EDUCATION</h2>
             <div 
@@ -52,12 +64,18 @@
                 style="cursor: pointer;"
             >
                 <div class="education-header">
-                    <h3>{{ edu.institution }}</h3>
+                    <div class="company-header">
+                        <img 
+                            [src]="edu.institution.includes('Indiana') ? 'assets/iu.jpeg' : 'assets/vit.jpeg'" 
+                            [alt]="edu.institution"
+                            class="company-logo">
+                        <h3>{{ edu.institution }}</h3>
+                    </div>
                     <span class="date">{{ edu.duration }}</span>
                 </div>
                 <div class="education-header">
                     <p><i>{{ edu.degree }}</i></p>
-                    <span class="edu-grade"><i>{{ edu.grade }}</i></span>
+                    <span>{{ edu.grade }}</span>
                 </div>
             </div>
         </section>
@@ -121,58 +139,104 @@
             </div>
         </section>
 
-        <section id="experience" class="resume-section">
-            <h2>EXPERIENCE</h2>
-            
-            <div class="experience-item">
+<section id="experience" class="resume-section">
+    <h2>EXPERIENCE</h2>
 
-                <div class="experience-header">
-                    <h3>Indiana University</h3>
-                    <span class="date">Aug 2025 – Present</span>
+    <div class="experience-item">
+        <div class="experience-header">
+            <div class="company-header">
+                <img src="assets/iusm.jpeg" alt="Indiana University School of Medicine" class="company-logo">
+                <div class="company-info">
+                    <h3>Indiana University School of Medicine</h3>
+                    <p class="location"> Indianapolis, IN</p>
                 </div>
-                <p><i>Associate Instructor - Computer Networks</i></p>
-                <ul>
-                    <li>Instructed and graded for 140+ students across multiple projects covering socket programming, network protocols, and distributed systems fundamentals in C.</li>
-                    <li>Developed project specifications, automated tests, and rubrics to evaluate the correctness, efficiency, and design of student implementations.</li>
-                    <li>Provided expert technical mentorship, debugging complex issues in protocol design, concurrency, and network I/O during labs and office hours.</li>
-                </ul>
-                <div class="experience-header">
-                    <h3>Indiana University</h3>
-                    <span class="date">Jul 2025 – Present</span>
-                </div>
-                <p><i>Software Developer, Data & AI</i></p>
-                <ul>
-                    <li>Designed and deployed Indiana Toxicity Watch, an interactive data platform mapping toxic chemical risks across 90+ counties to support evidence-based environmental policy and public health decisions</li>
-                    <li>Built and maintained multiple Power BI dashboards visualizing chemical release incidents, population exposure, and high-risk industrial zones.</li>
-                    <li>Developed machine learning models to predict mortality and health impact to estimate pre-mature deaths and life years lost due to spills. </li>
-                    <li>Collaborated with public health experts and environmentalists to translate data insights into actionable environmental risk mitigation strategies.</li>
-                </ul>
             </div>
-            <div class="experience-item">
-                <div class="experience-header">
+            <span class="date">Jan 2026 – Present</span>
+        </div>
+        <p><i>Software Developer, NLP and Automation</i></p>
+        <ul>
+            <li>Automating collection of phenotype and genotype data from electronic medical records for clinical research.</li>
+        </ul>
+    </div>
+
+    <div class="experience-item">
+        <div class="experience-header">
+            <div class="company-header">
+                <img src="assets/luddy_logo.jpeg" alt="Indiana University Luddy School" class="company-logo">
+                <div class="company-info">
+                    <h3>Luddy School of Informatics, Computing, and Engineering</h3>
+                    <p class="location">Bloomington, IN</p>
+                </div>
+            </div>
+            <span class="date">Jul 2025 – Present</span>
+        </div>
+        <div class="role-item">
+            <p><i>Research under Prof. Haixu Tang</i> <span class="role-date">Jan 2026 – Present</span></p>
+            <ul>
+                <li>Privacy Unlearning, Relearning Attacks, and Safety Alignment in Large
+Language Models.</li>
+            </ul>
+        </div>
+        <div class="role-item">
+            <p><i>Associate Instructor - Biomedical DS in Practice</i> <span class="role-date">Jan 2026 – Present</span></p>
+            <ul>
+                <li>Guided students in analyzing large-scale biomedical datasets from the NIH All of Us Research Program, covering cohort building, clinical/socioeconomic data handling, and multimodal analysis.</li>
+	            <li>Supported course delivery by assisting with quizzes, assignments, and project abstracts, providing technical mentorship in Python/R, data wrangling, visualization, and statistical/ML methods.</li>
+	            <li>Advised student teams on designing and executing final research projects, ensuring rigorous methodologies, ethical data usage, and clear communication of findings.</li>
+            </ul>
+        </div>
+        
+        <div class="role-item">
+            <p><i>Associate Instructor - Computer Networks</i> <span class="role-date">Aug 2025 – Dec 2025</span></p>
+            <ul>
+                <li>Instructed and graded for 140+ students across multiple projects covering socket programming, network protocols, and distributed systems fundamentals in C.</li>
+                <li>Developed project specifications, automated tests, and rubrics to evaluate the correctness, efficiency, and design of student implementations.</li>
+                <li>Provided expert technical mentorship, debugging complex issues in protocol design, concurrency, and network I/O during labs and office hours.</li>
+            </ul>
+        </div>
+        
+        <div class="role-item">
+            <p><i>Software Developer, Data & AI</i> <span class="role-date">Jul 2025 – Dec 2025</span></p>
+            <ul>
+                <li>Designed and deployed Indiana Toxicity Watch, an interactive data platform mapping toxic chemical risks across 90+ counties to support evidence-based environmental policy and public health decisions</li>
+                <li>Built and maintained multiple Power BI dashboards visualizing chemical release incidents, population exposure, and high-risk industrial zones.</li>
+                <li>Developed machine learning models to predict mortality and health impact to estimate pre-mature deaths and life years lost due to spills.</li>
+                <li>Collaborated with public health experts and environmentalists to translate data insights into actionable environmental risk mitigation strategies.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="experience-item">
+        <div class="experience-header">
+            <div class="company-header">
+                <img src="assets/bd_logo.jpeg" alt="Becton Dickinson" class="company-logo">
+                <div class="company-info">
                     <h3>Becton Dickinson</h3>
-                    <span class="date">Jan 2023 – Jun 2023</span>
+                    <p class="location"> Bangalore, India</p>
                 </div>
-                <p><i>Data Science Intern</i></p>
-                <ul>
-                    <li>Engineered a customer engagement analytics platform for personalized product recommendations, leveraging machine learning for data-driven insights. Projected 15% lesser expenditure by focusing campaigns and events based on customer engagement levels and sales revenue boost of 20%.</li>
-                    <li>Conducted rigorous data exploration, analysis, and validation to ensure data accuracy and reliability of more than 2 million records.</li>
-                    <li>Streamlined data integration from 5+ sources to identify key performance indicators (KPIs) for effective customer segmentation and modeling.</li>
-                    <li>Researched and implemented "Next Best Action" strategies to optimize business outcomes and enhance recommendation effectiveness.</li>
-                </ul>
             </div>
-            <div class="experience-item">
-                <div class="experience-header">
-                    <h3>Becton Dickinson</h3>
-                    <span class="date">May 2022 – Jul 2022</span>
-                </div>
-                <p><i>Software Development Engineer Intern</i></p>
-                <ul>
-                    <li>Designed and implemented a user-friendly portal enabling administrators to execute SQL queries for in-depth analysis of the formulary database, resulting in analysis results being delivered approximately 30% faster due to streamlined permissions.</li>
-                    <li>Collaborated with cross-functional teams located across the USA and Chandigarh.</li>
-                </ul>
-            </div>
-        </section>
+            <span class="date">May 2022 – Jun 2023</span>
+        </div>
+        
+        <div class="role-item">
+            <p><i>Data Science Intern</i> <span class="role-date">Jan 2023 – Jun 2023</span></p>
+            <ul>
+                <li>Engineered a customer engagement analytics platform for personalized product recommendations, leveraging machine learning for data-driven insights. Projected 15% lesser expenditure by focusing campaigns and events based on customer engagement levels and sales revenue boost of 20%.</li>
+                <li>Conducted rigorous data exploration, analysis, and validation to ensure data accuracy and reliability of more than 2 million records.</li>
+                <li>Streamlined data integration from 5+ sources to identify key performance indicators (KPIs) for effective customer segmentation and modeling.</li>
+                <li>Researched and implemented "Next Best Action" strategies to optimize business outcomes and enhance recommendation effectiveness.</li>
+            </ul>
+        </div>
+        
+        <div class="role-item">
+            <p><i>Software Development Engineer Intern</i> <span class="role-date">May 2022 – Jul 2022</span></p>
+            <ul>
+                <li>Designed and implemented a user-friendly portal enabling administrators to execute SQL queries for in-depth analysis of the formulary database, resulting in analysis results being delivered approximately 30% faster due to streamlined permissions.</li>
+                <li>Collaborated with cross-functional teams located across the USA and Chandigarh.</li>
+            </ul>
+        </div>
+    </div>
+</section>
 
         <section id="projects" class="resume-section">
             <h2>PROJECTS</h2>

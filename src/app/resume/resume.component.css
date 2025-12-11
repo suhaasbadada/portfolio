@@ -522,41 +522,449 @@ section {
   }
 }
 
-/* Style for the Download Resume link in side panel */
+/* Style for the Download Resume link in side panel — inverted CTA to match home Get in Touch */
 .download-resume-link {
-    background-color: var(--accent, #7c3aed) !important;
-    color: white !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 6px !important;
-    padding: 8px 12px !important;
-    margin-top: 5px !important;
-    margin-bottom: 5px !important;
-    border-radius: 6px !important;
-    transition: all 0.3s ease !important;
-    font-weight: 500 !important;
-    font-size: 14px !important;
-    text-align: center !important;
-    white-space: nowrap !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
+  /* Solid black pill with gradient-filled text */
+  background-color: #000 !important;
+  background-image: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed));
+  background-repeat: no-repeat !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  padding: 10px 14px !important;
+  margin-top: 6px !important;
+  margin-bottom: 6px !important;
+  border-radius: 8px !important;
+  transition: all 0.2s ease !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  border: 1px solid rgba(255,255,255,0.06) !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6), 0 6px 20px rgba(14,165,164,0.06) !important;
 }
 
 .download-resume-link:hover {
-    background-color: #6b2bd6 !important;
-    color: white !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.4) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 15px 35px rgba(14,165,164,0.12), 0 6px 25px rgba(124,58,237,0.04) !important;
 }
 
 .download-resume-link .material-icons {
-    font-size: 16px !important;
-    color: white !important;
+  font-size: 16px !important;
+  /* make the icon use the same gradient fill as the text */
+  background-image: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed)) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
 }
 
 .resume-side-panel .side-nav {
     display: flex;
     flex-direction: column;
     gap: 12px; /* Reduced gap between nav items */
+}
+
+/* Experience item styling */
+.experience-item {
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #252525;
+    border-radius: 6px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 3px solid #3a3a3a;
+}
+
+.experience-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(14, 165, 164, 0.1);
+    border-left-color: transparent;
+    border-image: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed)) 1;
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+}
+
+.experience-item > p {
+    margin: 0 0 10px 0;
+    font-size: 0.95em;
+    color: #d0d0d0;
+    font-style: italic;
+}
+
+.experience-item ul {
+    padding-left: 20px;
+    list-style-type: square;
+}
+
+.experience-item li {
+    margin-bottom: 8px;
+    position: relative;
+    left: 5px;
+    color: #c0c0c0;
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+/* Role item styling for grouped experience */
+.role-item {
+    margin-bottom: 20px;
+}
+
+.role-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Consistent styling for role title - matches ungrouped items */
+.role-item > p {
+    margin: 0 0 8px 0;
+    font-size: 0.95em;
+    color: #d0d0d0;
+    font-style: italic;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+.role-date {
+    font-size: 0.85em;
+    color: #a0a0a0;
+    white-space: nowrap;
+    margin-left: 15px;
+    font-style: normal;
+}
+
+/* Add subtle separator between role items in grouped experience */
+.role-item:not(:last-child) {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #3a3a3a;
+}
+
+/* Make sure ul in role items have same styling as ungrouped */
+.role-item ul {
+    padding-left: 20px;
+    list-style-type: square;
+    margin-top: 5px;
+}
+
+.role-item li {
+    margin-bottom: 8px;
+    position: relative;
+    left: 5px;
+    color: #c0c0c0;
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+/* Adjust spacing for grouped items */
+.experience-item > .role-item:first-child {
+    margin-top: 15px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .experience-header,
+    .role-item > p {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .experience-header .date,
+    .role-date {
+        margin-top: 5px;
+        margin-left: 0;
+    }
+}
+
+/* Company header with logo styling */
+.company-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+}
+
+.logo-placeholder {
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    flex-shrink: 0;
+}
+
+/* If you add actual logo images later, use this class */
+.company-logo {
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    object-fit: contain;
+    padding: 2px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.company-logo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Update experience-header to handle logo layout */
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+    gap: 10px;
+}
+
+/* Adjust h3 margin when logo is present */
+.company-header h3 {
+    margin: 0;
+    line-height: 1.3;
+}
+
+/* Responsive adjustments for logos */
+@media (max-width: 768px) {
+    .experience-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .company-header {
+        width: 100%;
+    }
+    
+    .experience-header .date {
+        align-self: flex-start;
+        margin-left: 48px; /* Align with text after logo */
+    }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+    .logo-placeholder,
+    .company-logo {
+        width: 32px;
+        height: 32px;
+        font-size: 12px;
+    }
+    
+    .experience-header .date {
+        margin-left: 44px;
+    }
+}
+
+/* Make role titles consistent with project titles */
+.role-item > p {
+    margin: 0 0 8px 0;
+    font-size: 0.95em;
+    color: #d0d0d0;
+    font-style: italic;
+    display: block;
+    line-height: 1.4;
+}
+
+.role-date {
+    float: right;
+    font-size: 0.85em;
+    color: #a0a0a0;
+    white-space: nowrap;
+    font-style: normal;
+    margin-left: 15px;
+}
+
+/* Clear the float */
+.role-item > p::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+/* Add subtle separator between role items in grouped experience */
+.role-item:not(:last-child) {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #3a3a3a;
+}
+
+/* Make sure ul in role items have same styling as ungrouped */
+.role-item ul {
+    padding-left: 20px;
+    list-style-type: square;
+    margin-top: 5px;
+}
+
+.role-item li {
+    margin-bottom: 8px;
+    position: relative;
+    left: 5px;
+    color: #c0c0c0;
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+/* Adjust spacing for grouped items */
+.experience-item > .role-item:first-child {
+    margin-top: 15px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .experience-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .experience-header .date {
+        margin-left: 0;
+        margin-top: 5px;
+    }
+    
+    .role-date {
+        float: none;
+        display: block;
+        margin-left: 0;
+        margin-top: 5px;
+    }
+}
+
+/* Make education-header use the same layout as experience-header */
+.education-item > .education-header:first-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+    gap: 10px;
+}
+
+/* Make sure the company-header inside education works correctly */
+.education-item .company-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+}
+
+/* Fix the spacing for the degree/grade row */
+.education-item > .education-header:last-child {
+    margin-top: 8px;
+    padding-left: 48px; /* Align with text after logo */
+}
+
+/* Responsive fixes for education */
+@media (max-width: 768px) {
+    .education-item > .education-header:first-child {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .education-item .company-header {
+        width: 100%;
+    }
+    
+    .education-item > .education-header:first-child .date {
+        align-self: flex-start;
+        margin-left: 48px;
+    }
+    
+    .education-item > .education-header:last-child {
+        padding-left: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .education-item > .education-header:first-child .date {
+        margin-left: 44px;
+    }
+}
+
+.company-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+/* Location styling */
+.location {
+    margin: 0;
+    font-size: 0.85em;
+    color: #a0a0a0;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.location:before {
+    content: "📍";
+    font-size: 0.8em;
+}
+
+/* Alternative location styling without emoji */
+.location-alt {
+    margin: 0;
+    font-size: 0.85em;
+    color: #a0a0a0;
+    font-style: italic;
+}
+
+/* Update company-header to work with new structure */
+.company-header {
+    display: flex;
+    align-items: flex-start; /* Changed from center to flex-start for better alignment */
+    gap: 12px;
+    flex: 1;
+}
+
+/* Adjust h3 margin when location is present */
+.company-info h3 {
+    margin: 0;
+    line-height: 1.3;
+}
+
+/* Responsive adjustments for location */
+@media (max-width: 768px) {
+    .company-info {
+        flex: 1;
+    }
+}
+
+/* Summary Section Styles */
+.summary-content {
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+.summary-content p {
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+.summary-content p:last-child {
+    margin-bottom: 0;
 }
