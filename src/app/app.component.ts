@@ -1,9 +1,4 @@
 // ...existing code...
-
-  private onResize = () => {
-    this.resizeCanvas();
-    this.createPoints();
-  }
 import { Component, AfterViewInit, OnDestroy, Inject, PLATFORM_ID, OnInit } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
@@ -13,6 +8,7 @@ import { isPlatformBrowser } from '@angular/common';
   standalone: false,
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent implements AfterViewInit, OnDestroy {
   title = 'SuhaasPortfolio';
 
@@ -21,12 +17,22 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   private animationId = 0;
   private points: { x: number; y: number; vx: number; vy: number }[] = [];
   private mouse = { x: -9999, y: -9999 };
+  private isBrowser: boolean;
 
-  constructor() {}
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    this.isBrowser = isPlatformBrowser(this.platformId);
+  }
+
+  private onResize = () => {
+    if (!this.isBrowser) return;
+    this.resizeCanvas();
+    this.createPoints();
+  }
 
   ngOnInit(): void {}
 
   ngAfterViewInit(): void {
+    if (!this.isBrowser) return;
     this.initCanvas();
     this.createPoints();
     this.startLoop();
@@ -35,6 +41,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    if (!this.isBrowser) return;
     window.removeEventListener('resize', this.onResize);
     window.removeEventListener('mousemove', this.onMouseMove);
     cancelAnimationFrame(this.animationId);
@@ -46,6 +53,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   }
 
   private initCanvas() {
+    if (!this.isBrowser) return;
     this.canvas = document.getElementById('bg-canvas') as HTMLCanvasElement;
     if (!this.canvas) return;
     this.ctx = this.canvas.getContext('2d');
@@ -53,7 +61,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   }
 
   private resizeCanvas = () => {
-    if (!this.canvas) return;
+    if (!this.isBrowser || !this.canvas) return;
     const dpr = window.devicePixelRatio || 1;
     this.canvas.width = Math.floor(window.innerWidth * dpr);
     this.canvas.height = Math.floor(window.innerHeight * dpr);
