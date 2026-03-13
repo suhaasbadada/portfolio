@@ -1,4 +1,10 @@
-import { Component, AfterViewInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
+// ...existing code...
+
+  private onResize = () => {
+    this.resizeCanvas();
+    this.createPoints();
+  }
+import { Component, AfterViewInit, OnDestroy, Inject, PLATFORM_ID, OnInit } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
 @Component({
@@ -9,7 +15,6 @@ import { isPlatformBrowser } from '@angular/common';
 })
 export class AppComponent implements AfterViewInit, OnDestroy {
   title = 'SuhaasPortfolio';
-  private isBrowser = false;
 
   private canvas!: HTMLCanvasElement;
   private ctx!: CanvasRenderingContext2D | null;
@@ -17,12 +22,11 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   private points: { x: number; y: number; vx: number; vy: number }[] = [];
   private mouse = { x: -9999, y: -9999 };
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
-    this.isBrowser = isPlatformBrowser(this.platformId);
-  }
+  constructor() {}
+
+  ngOnInit(): void {}
 
   ngAfterViewInit(): void {
-    if (!this.isBrowser) return;
     this.initCanvas();
     this.createPoints();
     this.startLoop();
@@ -31,13 +35,13 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    if (this.isBrowser) {
-      window.removeEventListener('resize', this.onResize);
-      window.removeEventListener('mousemove', this.onMouseMove);
-    }
-    // cancelAnimationFrame is a browser API — guard in case we're running under SSR
-    if (this.isBrowser && typeof cancelAnimationFrame !== 'undefined') {
-      cancelAnimationFrame(this.animationId);
+    window.removeEventListener('resize', this.onResize);
+    window.removeEventListener('mousemove', this.onMouseMove);
+    cancelAnimationFrame(this.animationId);
+    if (this.canvas) {
+      this.canvas.style.position = 'fixed';
+      this.canvas.style.zIndex = '0';
+      this.canvas.style.pointerEvents = 'none';
     }
   }
 
@@ -46,14 +50,6 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     if (!this.canvas) return;
     this.ctx = this.canvas.getContext('2d');
     this.resizeCanvas();
-    // ensure canvas doesn't block pointer events
-    this.canvas.style.position = 'fixed';
-    this.canvas.style.left = '0';
-    this.canvas.style.top = '0';
-    this.canvas.style.width = '100%';
-    this.canvas.style.height = '100%';
-    this.canvas.style.zIndex = '0';
-    this.canvas.style.pointerEvents = 'none';
   }
 
   private resizeCanvas = () => {
@@ -64,13 +60,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     this.canvas.style.width = window.innerWidth + 'px';
     this.canvas.style.height = window.innerHeight + 'px';
     if (this.ctx) this.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-  };
-
-  private onResize = () => {
-    this.resizeCanvas();
-    // optionally re-create points to match new density
-    this.createPoints();
-  };
+  }
 
   private createPoints() {
     const count = Math.max(12, Math.floor((window.innerWidth * window.innerHeight) / 120000));
@@ -92,7 +82,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
       this.animationId = requestAnimationFrame(step);
     };
     this.animationId = requestAnimationFrame(step);
-  };
+  }
 
   private update() {
     const mx = this.mouse.x;
@@ -127,6 +117,17 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     if (!this.ctx) return;
     const ctx = this.ctx;
     ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+    const css = getComputedStyle(document.documentElement);
+    const canvasLineCss = (css.getPropertyValue('--canvas-line') || 'rgba(255,255,255,0.18)').trim();
+    const canvasDotCss = (css.getPropertyValue('--canvas-dot') || 'rgba(255,255,255,0.9)').trim();
+    const parseRGB = (col: string) => {
+      const m = col.match(/\((\s*\d+),\s*(\d+),\s*(\d+)/);
+      if (m) return `${m[1].trim()},${m[2].trim()},${m[3].trim()}`;
+      // fallback to white
+      return '255,255,255';
+    };
+    const lineRGB = parseRGB(canvasLineCss);
+    const dotRGB = parseRGB(canvasDotCss);
     // draw faint connecting lines
     for (let i = 0; i < this.points.length; i++) {
       const a = this.points[i];
@@ -137,11 +138,11 @@ export class AppComponent implements AfterViewInit, OnDestroy {
         const d2 = dx * dx + dy * dy;
         const maxD2 = 160000; // 400px
         if (d2 < maxD2) {
-          const alpha = 0.18 * (1 - d2 / maxD2);
+          const alpha = 1 * (1 - d2 / maxD2) * 0.18; // scale by distance
           ctx.beginPath();
           ctx.moveTo(a.x, a.y);
           ctx.lineTo(b.x, b.y);
-          ctx.strokeStyle = `rgba(255,255,255,${alpha})`;
+          ctx.strokeStyle = `rgba(${lineRGB},${alpha})`;
           ctx.lineWidth = 1;
           ctx.stroke();
         }
@@ -151,7 +152,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     for (const p of this.points) {
       ctx.beginPath();
       ctx.arc(p.x, p.y, 1.5, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(255,255,255,0.9)';
+      ctx.fillStyle = `rgba(${dotRGB},0.95)`;
       ctx.fill();
     }
   }
@@ -159,5 +160,5 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   private onMouseMove = (e: MouseEvent) => {
     this.mouse.x = e.clientX;
     this.mouse.y = e.clientY;
-  };
+  }
 }

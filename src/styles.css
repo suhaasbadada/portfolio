@@ -1,17 +1,45 @@
+/* Global theme variables and base styles */
+:root {
+  /* Dark theme (default) variables */
+  --bg: #121212;
+  --surface: rgba(10,14,23,0.6);
+  --text: #e0e0e0;
+  --muted: #9aa4b2;
+  --primary: #0ea5a4;
+  --accent: #7c3aed;
+  --card-bg: rgba(255,255,255,0.03);
+  --card-border: rgba(255,255,255,0.05);
+  --panel-bg: #252525;
+  --panel-border: rgba(255,255,255,0.04);
+  --tag-bg: rgba(255,255,255,0.04);
+  --canvas-line: rgba(255,255,255,0.18);
+  --canvas-dot: rgba(255,255,255,0.9);
+  --primary-bg: rgba(14,165,164,0.1);
+  --accent-bg: rgba(124,58,237,0.1);
+  --cta-bg: #000;
+  /* window control dots (e.g. terminal header) */
+  --control-red: #ff5f56;
+  --control-yellow: #ffbd2e;
+  --control-green: #27ca3f;
+  --accent-gold: #ffd700;
+  --danger: #e74c3c;
+}
+
+
 /* You can add global styles to this file, and also import other style files */
 body {
   font-family: "Funnel Sans", serif; /* Set default font */
-    /* background-color: gray; */
-    background-color:#121212; /* A darker shade for the body */
-  color: #e0e0e0;
-  }
+  background-color: var(--bg);
+  color: var(--text);
+}
+
 html, body { height: 100%; }
 
 #favicon {
-    border-radius: 50%;
-    overflow: hidden;
-  }
-  
+  border-radius: 50%;
+  overflow: hidden;
+}
+
 /* Background canvas styles and stacking */
 #bg-canvas-container { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
 #bg-canvas { display: block; width: 100%; height: 100%; }

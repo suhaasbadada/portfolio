@@ -5,7 +5,7 @@
   gap: 28px;
   min-height: 100vh;
   padding: 20px;
-  background-color: #121212;
+  background-color: var(--bg);
 }
 
 .resume-page {
@@ -15,7 +15,7 @@
   width: 100%;
   line-height: 1.6;
   border-radius: 10px;
-  color: var(--text, #e0e0e0);
+  color: var(--text);
   position: relative;
   box-sizing: border-box;
   background: rgba(255,255,255,0.03);
@@ -31,7 +31,7 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed));
+  background: linear-gradient(90deg, var(--primary), var(--accent));
   opacity: 0.055;
   mix-blend-mode: screen;
   z-index: 0;
@@ -61,7 +61,7 @@
 }
 
 .section-nav a {
-  color: var(--muted, #a0a0a0);
+  color: var(--muted);
   text-decoration: none;
   font-size: 14px;
   transition: all 0.3s ease;
@@ -71,14 +71,14 @@
 }
 
 .section-nav a:hover {
-  background: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed));
+  background: linear-gradient(90deg, var(--primary), var(--accent));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
 }
 .section-nav a.active {
-  background: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed));
+  background: linear-gradient(90deg, var(--primary), var(--accent));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -115,7 +115,7 @@
 }
 
 .resume-side-panel .side-nav a {
-  color: var(--muted, #b8b8b8);
+  color: var(--muted);
   text-decoration: none;
   font-size: 16px;
   padding: 6px 8px;
@@ -124,7 +124,7 @@
 
 .resume-side-panel .side-nav a:hover,
 .resume-side-panel .side-nav a.active {
-  background: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed));
+  background: linear-gradient(90deg, var(--primary), var(--accent));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -146,17 +146,17 @@
 h1 {
   font-size: 28px;
   margin-bottom: 5px;
-  color: #ffffff;
+  color: var(--text);
   font-weight: 600;
 }
 
 h2 {
   font-size: 20px;
   border-bottom: 2px solid;
-  border-image: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed)) 1;
+  border-image: linear-gradient(90deg, var(--primary), var(--accent)) 1;
   padding-bottom: 8px;
   margin-top: 25px;
-  background: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed));
+  background: linear-gradient(90deg, var(--primary), var(--accent));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -168,7 +168,7 @@ h2 {
 h3 {
   font-size: 18px;
   margin-bottom: 5px;
-  color: #ffffff; /* Red color for company names */
+  color: var(--text);
   font-weight: 500;
 }
 
@@ -186,8 +186,8 @@ h3 {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background-color: #2d2d2d;
-  background: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed));
+  background-color: var(--tag-bg);
+  background: linear-gradient(90deg, var(--primary), var(--accent));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -197,7 +197,7 @@ h3 {
 }
 
 .contact-item:hover {
-  background: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed));
+  background: linear-gradient(90deg, var(--primary), var(--accent));
   color: white;
   transform: translateY(-2px);
   -webkit-text-fill-color: white;
@@ -232,10 +232,10 @@ ul li {
 .project-item {
   margin-bottom: 20px;
   padding: 15px;
-  background-color: #252525;
+  background-color: var(--panel-bg);
   border-radius: 6px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-left: 3px solid #3a3a3a;
+  border-left: 3px solid var(--panel-border);
 }
 
 .education-item:hover, 
@@ -244,7 +244,7 @@ ul li {
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(14, 165, 164, 0.1);
   border-left-color: transparent;
-  border-image: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed)) 1;
+  border-image: linear-gradient(90deg, var(--primary), var(--accent)) 1;
 }
 
 .education-header, 
@@ -255,8 +255,8 @@ ul li {
   flex-wrap: wrap;
 }
 
-.date {
-  color: #a0a0a0;
+  .date {
+  color: var(--muted);
   font-size: 0.9em;
 }
 
@@ -267,8 +267,8 @@ ul li {
 
 .skill-box {
   display: inline-block;
-  background-color: #333;
-  color: #e0e0e0;
+  background-color: var(--tag-bg);
+  color: var(--text);
   padding: 4px 12px;
   margin-right: 8px;
   margin-bottom: 8px;
@@ -278,7 +278,7 @@ ul li {
 }
 
 .skill-box:hover {
-  background: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed));
+  background: linear-gradient(90deg, var(--primary), var(--accent));
   color: white;
   transform: translateY(-2px);
 }
@@ -290,7 +290,7 @@ ul li {
 .skills-category strong {
   display: block;
   margin-bottom: 8px;
-  color: #b0b0b0;
+  color: var(--muted);
   font-weight: 500;
 }
 
@@ -302,7 +302,7 @@ ul li {
 }
 
 .certification-link:hover {
-  background: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed));
+  background: linear-gradient(90deg, var(--primary), var(--accent));
   color: white;
 }
 
@@ -313,8 +313,8 @@ ul li {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background-color: #333;
-  background: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed));
+  background-color: var(--tag-bg);
+  background: linear-gradient(90deg, var(--primary), var(--accent));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -325,7 +325,7 @@ ul li {
 }
 
 .publication-link:hover {
-  background: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed));
+  background: linear-gradient(90deg, var(--primary), var(--accent));
   color: white;
   transform: scale(1.1);
   -webkit-text-fill-color: white;
@@ -339,8 +339,8 @@ ul li {
   position: absolute;
   top: 15px;
   right: 15px;
-  background-color: #333;
-  background: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed));
+  background-color: var(--tag-bg);
+  background: linear-gradient(90deg, var(--primary), var(--accent));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -356,7 +356,7 @@ ul li {
 }
 
 .download-button:hover {
-  background: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed));
+  background: linear-gradient(90deg, var(--primary), var(--accent));
   color: white;
   transform: scale(1.1);
   -webkit-text-fill-color: white;
@@ -367,7 +367,7 @@ ul li {
 }
 
 .edu-grade {
-  background: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed));
+  background: linear-gradient(90deg, var(--primary), var(--accent));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -378,7 +378,7 @@ ul li {
 hr {
   border: none;
   height: 1px;
-  background-color: #333;
+  background-color: var(--panel-border);
   margin: 20px 0;
 }
 
@@ -418,28 +418,28 @@ section {
 
 @media print {
   .resume-container {
-    background-color: white;
+    background-color: var(--card-bg);
   }
 
   .resume-page {
     box-shadow: none;
     border: none;
-    color: #000;
-    background-color: white;
+    color: var(--text);
+    background-color: var(--card-bg);
   }
   
   h1, h3 {
-    color: #000;
+    color: var(--text);
   }
   
   h2 {
-    color: #1a5fb4;
-    border-bottom-color: #1a5fb4;
+    color: var(--primary);
+    border-bottom-color: var(--primary);
   }
   
   .contact-item {
     background-color: transparent;
-    color: #000;
+    color: var(--text);
   }
   
   .section-nav, .download-button {
@@ -449,17 +449,17 @@ section {
   .education-item, 
   .experience-item, 
   .project-item {
-    background-color: white;
-    border-left: 3px solid #ddd;
+    background-color: var(--card-bg);
+    border-left: 3px solid var(--panel-border);
   }
   
   .skill-box {
-    background-color: #f0f0f0;
-    color: #333;
+    background-color: var(--panel-bg);
+    color: var(--text);
   }
   
   .edu-grade {
-    color: #1a5fb4;
+    color: var(--primary);
   }
 }
 
@@ -481,7 +481,7 @@ section {
   position: relative;
   width: 80%;
   height: 90%;
-  background: #fff;
+  background: var(--card-bg);
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
@@ -500,7 +500,7 @@ section {
   right: 16px;
   font-size: 24px;
   font-weight: bold;
-  color: #555;
+  color: var(--muted);
   background: none;
   border: none;
   cursor: pointer;
@@ -508,7 +508,7 @@ section {
 }
 
 .close-button:hover {
-  color: #d00;
+  color: var(--danger);
 }
 
 @keyframes fadeInModal {
@@ -524,9 +524,9 @@ section {
 
 /* Style for the Download Resume link in side panel — inverted CTA to match home Get in Touch */
 .download-resume-link {
-  /* Solid black pill with gradient-filled text */
-  background-color: #000 !important;
-  background-image: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed));
+  /* Solid pill (theme-controlled) with gradient-filled text */
+  background-color: var(--cta-bg) !important;
+  background-image: linear-gradient(90deg, var(--primary), var(--accent));
   background-repeat: no-repeat !important;
   -webkit-background-clip: text !important;
   background-clip: text !important;
@@ -548,18 +548,19 @@ section {
   width: 100% !important;
   box-sizing: border-box !important;
   border: 1px solid rgba(255,255,255,0.06) !important;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.6), 0 6px 20px rgba(14,165,164,0.06) !important;
+  /* reduced elevation */
+  box-shadow: 0 6px 16px rgba(0,0,0,0.45), 0 4px 12px rgba(14,165,164,0.04) !important;
 }
 
 .download-resume-link:hover {
   transform: translateY(-2px) !important;
-  box-shadow: 0 15px 35px rgba(14,165,164,0.12), 0 6px 25px rgba(124,58,237,0.04) !important;
+  box-shadow: 0 10px 22px rgba(14,165,164,0.08), 0 4px 16px rgba(124,58,237,0.03) !important;
 }
 
 .download-resume-link .material-icons {
   font-size: 16px !important;
   /* make the icon use the same gradient fill as the text */
-  background-image: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed)) !important;
+  background-image: linear-gradient(90deg, var(--primary), var(--accent)) !important;
   -webkit-background-clip: text !important;
   background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
@@ -576,17 +577,17 @@ section {
 .experience-item {
     margin-bottom: 30px;
     padding: 15px;
-    background-color: #252525;
+  background-color: var(--panel-bg);
     border-radius: 6px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-left: 3px solid #3a3a3a;
+  border-left: 3px solid var(--panel-border);
 }
 
 .experience-item:hover {
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(14, 165, 164, 0.1);
     border-left-color: transparent;
-    border-image: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed)) 1;
+  border-image: linear-gradient(90deg, var(--primary), var(--accent)) 1;
 }
 
 .experience-header {
@@ -600,7 +601,7 @@ section {
 .experience-item > p {
     margin: 0 0 10px 0;
     font-size: 0.95em;
-    color: #d0d0d0;
+  color: var(--muted);
     font-style: italic;
 }
 
@@ -612,8 +613,8 @@ section {
 .experience-item li {
     margin-bottom: 8px;
     position: relative;
-    left: 5px;
-    color: #c0c0c0;
+  left: 5px;
+  color: var(--muted);
     font-size: 0.9em;
     line-height: 1.5;
 }
@@ -631,7 +632,7 @@ section {
 .role-item > p {
     margin: 0 0 8px 0;
     font-size: 0.95em;
-    color: #d0d0d0;
+  color: var(--muted);
     font-style: italic;
     display: flex;
     justify-content: space-between;
@@ -640,8 +641,8 @@ section {
 }
 
 .role-date {
-    font-size: 0.85em;
-    color: #a0a0a0;
+  font-size: 0.85em;
+  color: var(--muted);
     white-space: nowrap;
     margin-left: 15px;
     font-style: normal;
@@ -649,8 +650,8 @@ section {
 
 /* Add subtle separator between role items in grouped experience */
 .role-item:not(:last-child) {
-    padding-bottom: 15px;
-    border-bottom: 1px solid #3a3a3a;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--panel-border);
 }
 
 /* Make sure ul in role items have same styling as ungrouped */
@@ -664,7 +665,7 @@ section {
     margin-bottom: 8px;
     position: relative;
     left: 5px;
-    color: #c0c0c0;
+  color: var(--muted);
     font-size: 0.9em;
     line-height: 1.5;
 }
@@ -780,7 +781,7 @@ section {
 .role-item > p {
     margin: 0 0 8px 0;
     font-size: 0.95em;
-    color: #d0d0d0;
+  color: var(--muted);
     font-style: italic;
     display: block;
     line-height: 1.4;
@@ -789,7 +790,7 @@ section {
 .role-date {
     float: right;
     font-size: 0.85em;
-    color: #a0a0a0;
+  color: var(--muted);
     white-space: nowrap;
     font-style: normal;
     margin-left: 15px;
@@ -805,7 +806,7 @@ section {
 /* Add subtle separator between role items in grouped experience */
 .role-item:not(:last-child) {
     padding-bottom: 15px;
-    border-bottom: 1px solid #3a3a3a;
+  border-bottom: 1px solid var(--panel-border);
 }
 
 /* Make sure ul in role items have same styling as ungrouped */
@@ -819,7 +820,7 @@ section {
     margin-bottom: 8px;
     position: relative;
     left: 5px;
-    color: #c0c0c0;
+  color: var(--muted);
     font-size: 0.9em;
     line-height: 1.5;
 }
@@ -914,7 +915,7 @@ section {
 .location {
     margin: 0;
     font-size: 0.85em;
-    color: #a0a0a0;
+  color: var(--muted);
     display: flex;
     align-items: center;
     gap: 4px;
@@ -929,7 +930,7 @@ section {
 .location-alt {
     margin: 0;
     font-size: 0.85em;
-    color: #a0a0a0;
+  color: var(--muted);
     font-style: italic;
 }
 

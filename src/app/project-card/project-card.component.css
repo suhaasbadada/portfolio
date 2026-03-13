@@ -2,8 +2,8 @@
     display: flex;
     justify-content: center; 
     align-items: center; 
-    background-color: rgba(255,255,255,0.04);
-    color: var(--text, #f5f5f5);
+    background-color: var(--tag-bg);
+    color: var(--text);
     padding: 4px 8px;
     border-radius: 10px;
     font-size: 0.8rem;
@@ -26,8 +26,8 @@
     border-radius: 12px;
     position: relative;
     overflow: visible; /* allow content to flow if it needs more space */
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.05);
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
     backdrop-filter: blur(6px) saturate(120%);
     -webkit-backdrop-filter: blur(6px) saturate(120%);
     box-shadow: 0 6px 22px rgba(2,6,23,0.6);
@@ -41,7 +41,7 @@
     position: absolute;
     inset: 0;
     pointer-events: none;
-    background: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed));
+    background: linear-gradient(90deg, var(--primary), var(--accent));
     opacity: 0.055;
     mix-blend-mode: screen;
 }
@@ -53,11 +53,11 @@
     gap: 8px;
 }
 .project-card-title {
-    color: var(--text, #e0e0e0);
+    color: var(--text);
     font-size: 1.05rem;
     margin: 0;
     /* Add gradient text with higher opacity for better visibility */
-    background: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed));
+    background: linear-gradient(90deg, var(--primary), var(--accent));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -65,9 +65,9 @@
     opacity: 1; /* Increased from 0.9 to 1 for maximum visibility */
     font-weight: 600; /* Slightly bolder to enhance the color */
 }
-.project-card-text { color: var(--muted, #b3b3b3); font-size: 0.9rem; flex: 1 1 auto; overflow-wrap: anywhere; }
+.project-card-text { color: var(--muted); font-size: 0.9rem; flex: 1 1 auto; overflow-wrap: anywhere; }
 .project-card-footer { background: transparent; border-top: none; padding: 12px 10px; flex-shrink: 0; }
-.project-card-year { position: absolute; top: 10px; right: 12px; color: rgba(255,255,255,0.6); font-size: .85rem; }
+.project-card-year { position: absolute; top: 10px; right: 12px; color: var(--muted); font-size: .85rem; }
 
 .project-card.shadow:hover {
     transform: translateY(-6px);
@@ -85,7 +85,7 @@
 }
 
 .project-card-title {
-    color: var(--text, #e0e0e0);
+    color: var(--text);
     font-size: 1.05rem;
     margin: 0;
     display: flex;
@@ -95,7 +95,7 @@
 }
 
 .project-card-title i {
-    background: linear-gradient(90deg, var(--primary, #0ea5a4), var(--accent, #7c3aed));
+    background: linear-gradient(90deg, var(--primary), var(--accent));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;

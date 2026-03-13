@@ -6,11 +6,11 @@
   }
   
   .custom-navbar {
-    background-color: #2a2a2a;
+    background-color: var(--card-bg);
     border-radius: 25px;
     padding: 10px;
     margin-top: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     width: 450px;
     display: flex;
     align-items: center;
@@ -24,7 +24,7 @@
   }
   
   .custom-navbar .nav-link {
-    color: #a0a0a0;
+    color: var(--muted);
     border-radius: 20px;
     padding: 8px 16px;
     margin: 0 5px;
@@ -32,13 +32,13 @@
   }
   
   .custom-navbar .nav-link:hover {
-    background-color: #2c2c2c;
-    color: #ffffff;
+    background-color: var(--panel-bg);
+    color: var(--text);
   }
   
   .custom-navbar .nav-link.active {
-    background-color: #3a3a3a;
-    color: #ffffff !important;
+    background-color: var(--panel-bg);
+    color: var(--text) !important;
   }
   
   .profile-image {

@@ -26,13 +26,13 @@ export class ResumeComponent implements AfterViewInit {
       institution: 'Indiana University Bloomington',
       degree: 'Masters in Computer Science',
       duration: 'Aug 2024 - May 2026',
-      grade: '3.95 / 4'
+      grade: '3.9 / 4'
     },
     {
       institution: 'Vellore Institute of Technology',
       degree: 'Bachelors in Computer Science',
       duration: 'Jul 2019 - May 2023',
-      grade: '8.69 / 10'
+      grade: '8.7 / 10'
     }
   ];
 
