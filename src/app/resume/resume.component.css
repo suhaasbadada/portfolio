@@ -470,7 +470,7 @@ section {
   width: 100%;
   height: 100%;
   backdrop-filter: blur(8px);
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -479,12 +479,18 @@ section {
 
 .pdf-modal-content {
   position: relative;
-  width: 80%;
+  width: 85%;
+  max-width: 1000px;
   height: 90%;
-  background: var(--card-bg);
+  background: #1a1a1a;
+  border: 2px solid transparent;
+  background-image: linear-gradient(#1a1a1a, #1a1a1a), 
+                    linear-gradient(to right, #06b6d4, #a855f7);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 8px 24px rgba(6, 182, 212, 0.15);
   animation: fadeInModal 0.3s ease-out;
 }
 
@@ -492,23 +498,33 @@ section {
   width: 100%;
   height: 100%;
   border: none;
+  background: #0f0f0f;
 }
 
 .close-button {
   position: absolute;
-  top: 12px;
+  top: 16px;
   right: 16px;
   font-size: 24px;
   font-weight: bold;
-  color: var(--muted);
-  background: none;
+  color: #f0f0f0;
+  background: rgba(0, 0, 0, 0.4);
   border: none;
+  border-radius: 4px;
   cursor: pointer;
-  z-index: 1;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  padding: 0;
 }
 
 .close-button:hover {
-  color: var(--danger);
+  background: rgba(255, 79, 79, 0.3);
+  color: #ff4f4f;
 }
 
 @keyframes fadeInModal {
@@ -596,6 +612,43 @@ section {
     align-items: baseline;
     flex-wrap: wrap;
     margin-bottom: 8px;
+}
+
+.transcript-button-wrapper {
+  display: block;
+  margin-top: 12px;
+  clear: both;
+}
+
+.education-grade-section {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.transcript-button {
+  margin: 0;
+  padding: 2px 4px;
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 400;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  opacity: 0.6;
+}
+
+.transcript-button:hover {
+  background: transparent;
+  border: none;
+  color: var(--primary);
+  opacity: 1;
+  box-shadow: none;
 }
 
 .experience-item > p {

@@ -69,6 +69,14 @@ body {
   width: 100%;
 }
 
+/* CTA Buttons Container */
+.cta-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 .contact-below-photo .btn-cta {
   /* Inverted CTA: solid black background, gradient-filled text */
   background-color: var(--cta-bg);
@@ -94,6 +102,35 @@ body {
   transform: translateY(-2px);
   /* Subtle teal glow on hover */
   box-shadow: 0 10px 22px rgba(14, 165, 164, 0.08), 0 4px 16px rgba(124, 58, 237, 0.03);
+}
+
+/* Outline/Ghost button style */
+.contact-below-photo .btn-cta-outline {
+  background-image: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  -webkit-text-fill-color: unset;
+  color: transparent;
+  background-color: transparent;
+  border: 1.5px solid var(--primary);
+  box-shadow: 0 4px 12px rgba(14, 165, 164, 0.06);
+}
+
+.contact-below-photo .btn-cta-outline {
+  background: transparent;
+  border: 1.5px solid var(--primary);
+  color: var(--primary);
+  -webkit-text-fill-color: var(--primary);
+  box-shadow: 0 4px 12px rgba(14, 165, 164, 0.06);
+  transition: all 0.2s ease;
+}
+
+.contact-below-photo .btn-cta-outline:hover {
+  background: rgba(14, 165, 164, 0.1);
+  border-color: var(--accent);
+  color: var(--accent);
+  -webkit-text-fill-color: var(--accent);
+  box-shadow: 0 6px 16px rgba(14, 165, 164, 0.12);
 }
 
 .contact-below-photo .hero-socials {

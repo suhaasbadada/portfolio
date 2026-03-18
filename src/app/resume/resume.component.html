@@ -8,7 +8,7 @@
             <a href="#projects" class="nav-link">Projects</a>
             <a href="#publications" class="nav-link">Publications</a>
             <a href="#awards" class="nav-link">Awards</a>
-            <a href="/assets/Suhaas_Resume.pdf" download="Suhaas_Resume.pdf" class="nav-link download-resume-link">
+            <a href="/assets/Suhaas_Badada_Resume.pdf" download="Suhaas_Badada_Resume.pdf" class="nav-link download-resume-link">
                 <i class="material-icons">file_download</i> Download Resume
             </a>
         </nav>
@@ -58,10 +58,8 @@ impact. Winner of multiple hackathons.</p>
         <section id="education" class="resume-section">
             <h2>EDUCATION</h2>
             <div 
-                class="education-item" 
+                class="education-item"
                 *ngFor="let edu of education" 
-                (click)="openTranscript(edu.institution.includes('Indiana') ? 'IUB_transcript.pdf' : 'VIT_transcript.pdf')" 
-                style="cursor: pointer;"
             >
                 <div class="education-header">
                     <div class="company-header">
@@ -75,7 +73,12 @@ impact. Winner of multiple hackathons.</p>
                 </div>
                 <div class="education-header">
                     <p><i>{{ edu.degree }}</i></p>
-                    <span>{{ edu.grade }}</span>
+                    <div class="education-grade-section">
+                        <span>{{ edu.grade }}</span>
+                        <button class="transcript-button" (click)="openTranscript(edu.institution.includes('Indiana') ? 'IUB_transcript.pdf' : 'VIT_transcript.pdf')" title="View Transcript">
+                            view
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
