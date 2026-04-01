@@ -265,55 +265,15 @@ information from model weights while preserving overall knowledge and performanc
 
         <section id="projects" class="resume-section">
             <h2>PROJECTS</h2>
-            <div class="project-item">
-                <h3>Am I Okay (MLH Hoya Hacks Winner)</h3>
-                <p class="project-skills">
-                    <em>
-                        <span class="skill-box">Python</span>
-                        <span class="skill-box">Machine Learning</span>
-                        <span class="skill-box">Flask</span>
-                        <span class="skill-box">HTML</span>
-                        <span class="skill-box">CSS</span>
-                        <span class="skill-box">Google Cloud API</span>
-                    </em>
-                </p>
-                <ul>
-                    <li>Engineered a Machine Learning based software that predicts diseases based on symptoms, provides details, recommends medication, and offers location of the nearest top rated super specialty hospitals that treat it.</li>
-                    <li>Evaluated and compared over 7 classification algorithms to determine the best performing model.</li>
-                </ul>
-            </div>
-            <div class="project-item">
-                <h3>ResuSight</h3>
-                <p class="project-skills">
-                    <em>
-                        <span class="skill-box">Flask</span>
-                        <span class="skill-box">Strawberry GraphQL</span>
-                        <span class="skill-box">MongoDB</span>
-                        <span class="skill-box">OpenAI</span>
-                        <span class="skill-box">Langchain</span>
-                    </em>
-                </p>
-                <ul>
-                    <li>Developed an innovative interview preparation platform, leveraging OpenAI via Langchain which facilitates detailed resume analysis and generates customized interview questions based on resumes and job descriptions.</li>
-                    <li>Aimed at helping candidates focus their efforts efficiently and save precious time.</li>
-                </ul>
-            </div>
-            <div class="project-item">
-                <h3>VocabCards</h3>
-                <p class="project-skills">
-                    <em>
-                        <span class="skill-box">Angular</span>
-                        <span class="skill-box">ASP.NET</span>
-                        <span class="skill-box">SQL</span>
-                        <span class="skill-box">MaterialUI</span>
-                        <span class="skill-box">Firebase</span>
-                        <span class="skill-box">Azure</span>
-                    </em>
-                </p>
-                <ul>
-                    <li>Created a personalized vocabulary learning platform for GRE aspirants, a full stack project, incorporating progress tracking features and gamified elements.</li>
-                    <li>Led to 30% weekly new user registrations and positive feedback from 90% of participants during user testing.</li>
-                </ul>
+            <div class="projects-grid">
+                <div class="project-card" *ngFor="let project of projects">
+                    <a [href]="project.url" target="_blank" class="project-card-link">
+                        <div class="project-card-content">
+                            <h3 class="project-name">{{ project.name }}</h3>
+                            <span class="project-year">{{ project.year }}</span>
+                        </div>
+                    </a>
+                </div>
             </div>
         </section>
 
