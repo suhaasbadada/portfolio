@@ -1,6 +1,7 @@
 // ...existing code...
 import { Component, AfterViewInit, OnDestroy, Inject, PLATFORM_ID, OnInit } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { ThemeService } from './services/theme.service';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,7 @@ import { isPlatformBrowser } from '@angular/common';
 
 export class AppComponent implements AfterViewInit, OnDestroy {
   title = 'SuhaasPortfolio';
+  isDarkMode = true;
 
   private canvas!: HTMLCanvasElement;
   private ctx!: CanvasRenderingContext2D | null;
@@ -19,8 +21,9 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   private mouse = { x: -9999, y: -9999 };
   private isBrowser: boolean;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+  constructor(@Inject(PLATFORM_ID) private platformId: Object, private themeService: ThemeService) {
     this.isBrowser = isPlatformBrowser(this.platformId);
+    this.isDarkMode = this.themeService.isDarkModeActive();
   }
 
   private onResize = () => {
@@ -168,5 +171,10 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   private onMouseMove = (e: MouseEvent) => {
     this.mouse.x = e.clientX;
     this.mouse.y = e.clientY;
+  }
+
+  toggleTheme(): void {
+    this.themeService.toggleTheme();
+    this.isDarkMode = this.themeService.isDarkModeActive();
   }
 }

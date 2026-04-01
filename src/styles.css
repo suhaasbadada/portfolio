@@ -25,12 +25,33 @@
   --danger: #e74c3c;
 }
 
+/* Light theme variables */
+[data-theme="light"] {
+  --bg: #f5f5f7;
+  --surface: rgba(255,255,255,0.95);
+  --text: #1d1d1f;
+  --muted: #6c7280;
+  --primary: #0ea5a4;
+  --accent: #7c3aed;
+  --card-bg: rgba(0,0,0,0.02);
+  --card-border: rgba(0,0,0,0.08);
+  --panel-bg: #ffffff;
+  --panel-border: rgba(0,0,0,0.08);
+  --tag-bg: rgba(0,0,0,0.05);
+  --canvas-line: rgba(0,0,0,0.1);
+  --canvas-dot: rgba(30,30,30,0.7);
+  --primary-bg: rgba(14,165,164,0.08);
+  --accent-bg: rgba(124,58,237,0.08);
+  --cta-bg: #ffffff;
+}
+
 
 /* You can add global styles to this file, and also import other style files */
 body {
   font-family: "Funnel Sans", serif; /* Set default font */
   background-color: var(--bg);
   color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 html, body { height: 100%; }

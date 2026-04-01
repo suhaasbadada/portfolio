@@ -2,6 +2,10 @@
   <canvas id="bg-canvas" aria-hidden="true"></canvas>
 </div>
 
+<button class="theme-toggle" (click)="toggleTheme()" [attr.aria-label]="isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'" title="Toggle theme">
+  <i class="material-icons">{{ isDarkMode ? 'light_mode' : 'dark_mode' }}</i>
+</button>
+
 <div>
   <!-- <app-header></app-header> -->
   <app-nav></app-nav>
