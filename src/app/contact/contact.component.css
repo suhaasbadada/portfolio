@@ -188,6 +188,12 @@ button.btn:not(:disabled):hover {
 .social-link img {
   width: 22px;
   height: 22px;
+  object-fit: contain;
+}
+
+.social-link .calendly-icon {
+  width: 20px;
+  height: 20px;
 }
 
 /* Responsive design */

@@ -205,13 +205,33 @@ h3 {
   font-size: 18px;
 }
 
-.social-icon {
-  filter: invert(60%) sepia(58%) saturate(566%) hue-rotate(183deg) brightness(92%) contrast(89%);
-  transition: all 0.3s ease;
+.linkedin-contact,
+.github-contact {
+  background: none;
+  color: var(--primary);
+  -webkit-text-fill-color: currentColor;
 }
 
-.contact-item:hover .social-icon {
-  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+.linkedin-contact:hover,
+.github-contact:hover {
+  background: none;
+  color: var(--accent);
+  -webkit-text-fill-color: currentColor;
+}
+
+.brand-icon-svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+  fill: currentColor;
+}
+
+.linkedin-glyph {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.5px;
+  font-family: inherit;
 }
 
 ul {
@@ -604,8 +624,8 @@ section {
   position: absolute;
   top: 15px;
   right: 15px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: var(--panel-bg);
+  border: 1px solid var(--panel-border);
   color: var(--text);
   font-size: 24px;
   width: 40px;
@@ -619,9 +639,27 @@ section {
   transition: all 0.2s ease;
 }
 
+[data-theme="light"] .close-button {
+  background-color: #fee !important;
+  border: 2px solid #ff3333 !important;
+  color: #ff3333 !important;
+  font-weight: bold;
+}
+
+[data-theme="light"] .linkedin-contact,
+[data-theme="light"] .github-contact {
+  color: #111827;
+}
+
+[data-theme="light"] .close-button:hover {
+  background-color: #ff3333 !important;
+  border-color: #cc0000 !important;
+  color: white !important;
+}
+
 .close-button:hover {
   background-color: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.3);
+  border-color: var(--primary);
   transform: scale(1.1);
 }
 

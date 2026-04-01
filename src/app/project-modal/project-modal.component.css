@@ -3,9 +3,40 @@
     background-color: var(--muted) !important;
 }
 
-.btn-close {
-    color: var(--text) !important;
-  }
+.custom-close-btn {
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--panel-border);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.custom-close-btn:hover {
+    transform: scale(1.06);
+    border-color: var(--primary);
+    background: rgba(255, 255, 255, 0.14);
+}
+
+[data-theme="light"] .custom-close-btn {
+    background: #fff1f2;
+    border: 2px solid #ef4444;
+    color: #ef4444;
+    font-weight: 700;
+}
+
+[data-theme="light"] .custom-close-btn:hover {
+    background: #ef4444;
+    color: #ffffff;
+    border-color: #dc2626;
+}
 
 .modal-surface {
     background: var(--panel-bg);
@@ -14,17 +45,22 @@
                       linear-gradient(to right, #06b6d4, #a855f7);
     background-origin: border-box;
     background-clip: padding-box, border-box;
+    position: relative;
+    padding-right: 72px;
 }
 
 .modal-title-text { 
     color: var(--text);
     outline: none;
     border: none;
+    margin: 0;
+    width: 100%;
 }
 
 .modal-title-text p {
     outline: none;
     border: none;
+    margin: 0;
 }
 
 .modal-title-accent { 
@@ -55,5 +91,42 @@
 .modal-body {
     background: var(--panel-bg);
     transition: background-color 0.3s ease;
+}
+
+/* GitHub link styling */
+.github-link {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 8px;
+    color: var(--primary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.github-link:hover {
+    color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.custom-close-btn {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+}
+
+.github-icon-svg {
+    width: 28px;
+    height: 28px;
+    display: block;
+    fill: currentColor;
+}
+
+/* Light mode github link */
+[data-theme="light"] .github-link {
+    color: #111827;
+}
+
+[data-theme="light"] .github-link:hover {
+    color: #0f766e;
 }
   
