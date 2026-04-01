@@ -104,6 +104,22 @@
     /* font-weight: 600; */
 }
 
+.project-title-link {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.project-title-link i {
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
+}
+
+.project-title-link:hover i {
+    opacity: 0.8;
+}
+
 .crown-emoji {
     filter: none !important;
     background: none !important;

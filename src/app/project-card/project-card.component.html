@@ -1,7 +1,9 @@
 <div class="card shadow project-card text-center" (click)="OpenProjectModal()">
     <div class="card-body project-card-body">
         <p class="card-title project-card-title">
-            <i>{{getProjectNameWithoutCrown(project.name)}}</i>
+            <a [href]="project.url" target="_blank" rel="noopener noreferrer" class="project-title-link" (click)="$event.stopPropagation()">
+                <i>{{getProjectNameWithoutCrown(project.name)}}</i>
+            </a>
             <span class="crown-emoji" *ngIf="hasCrown(project.name)">👑</span>
         </p>
         <p class="card-text project-card-text">{{project.summary}}.</p>

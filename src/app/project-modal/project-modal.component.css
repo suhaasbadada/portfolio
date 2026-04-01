@@ -67,6 +67,7 @@
     color: var(--primary);
     outline: none !important;
     border: none !important;
+    line-height: 1.2;
 }
 
 .modal-title-accent:focus {
@@ -93,40 +94,9 @@
     transition: background-color 0.3s ease;
 }
 
-/* GitHub link styling */
-.github-link {
-    display: inline-flex;
-    align-items: center;
-    margin-left: 8px;
-    color: var(--primary);
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.github-link:hover {
-    color: var(--accent);
-    transform: translateY(-2px);
-}
-
 .custom-close-btn {
     position: absolute;
     top: 14px;
     right: 14px;
-}
-
-.github-icon-svg {
-    width: 28px;
-    height: 28px;
-    display: block;
-    fill: currentColor;
-}
-
-/* Light mode github link */
-[data-theme="light"] .github-link {
-    color: #111827;
-}
-
-[data-theme="light"] .github-link:hover {
-    color: #0f766e;
 }
   
