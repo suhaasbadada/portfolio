@@ -292,6 +292,11 @@ ul li {
   font-size: 0.9em;
 }
 
+.edu-grade {
+  color: var(--primary);
+  font-weight: 600;
+}
+
 .skill-box {
   display: inline-block;
   background-color: var(--tag-bg);
@@ -414,6 +419,17 @@ section {
   color: var(--muted);
   font-size: 0.9em;
   line-height: 1.5;
+}
+
+.resume-inline-link {
+  color: var(--primary);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.resume-inline-link:hover {
+  color: var(--accent);
 }
 
 .company-header {
