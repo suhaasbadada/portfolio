@@ -9,6 +9,7 @@ import { Project } from '../_models/Project';
 })
 export class PortfolioComponent {
   projects: Project[] = [
+    {id:15, name:'Strike3 👑', year: 2026, summary: 'Custom Built OCR (CNN) + Adaptive Huffman for accurate, lossless text compression', description: 'lorem ipsum', url: 'https://strike3-hackathon.vercel.app', pictures: ['assets/strike1.png','assets/strike2.png','assets/strike3.png'], tags: ['FastAPI','Next.js','Pytorch','Render','Vercel','OpenCV']},
     {id:14, name:'Hoosier Prints', year: 2026, summary: 'Lightweight PWA that helps IU students quickly locate the nearest available printers across multiple campuses', description: 'lorem ipsum', url: 'https://hoosier-prints.web.app/', pictures: ['assets/hp.png','assets/hp-pwa.png'], tags: ['React', 'PWA', 'Firebase', 'Geolocation', 'Python','Copilot']},
     {id:13, name:'SoftLight Agent', year: 2025, summary: 'AI-powered web automation system achieving 8x faster task completion through intelligent UI sequence generation, reducing manual data entry time from hours to minutes', description: 'lorem ipsum', url: 'https://github.com/suhaasbadada/softlight_agent', pictures: ['assets/sl.mp4'], tags:['FastAPI','Playwright','Groq API','Automation']},
     {id:12, name:'MailMart*', year: 2025, summary: 'Smart email offer storefront delivering 40% increase in deal discovery rates by intelligently categorizing promotional emails, helping users save time and find better deals', description: 'lorem ipsum', url: 'https://mailmart.vercel.app/', pictures: [], tags:['FastAPI','NextJs','PostgreSQL']},
