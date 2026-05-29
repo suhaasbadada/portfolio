@@ -39,8 +39,12 @@ export class ResumeComponent implements AfterViewInit {
 
   awards = [
     {
+      name: 'Luddy Hackathon Fifth Edition Winner',
+      description: ' Built OCR (CNN) + Adaptive Huffman for accurate, lossless text compression in < 24 hours.'
+    },
+    {
       name: 'Luddy Hackathon Fourth Edition Winner',
-      description: 'Won the said hackathon for building InnovAIte, an AI-powered innovation portal that uses the ReAct framework to evaluate and prioritize user-submitted ideas based on business impact, ROI, and strategic alignment. The platform includes a PowerBI analytics dashboard for tracking idea performance and supports data-driven decision-making for strategic innovation.'
+      description: 'Built InnovAIte, an AI-powered innovation portal that uses the ReAct framework to evaluate and prioritize user-submitted ideas based on business impact, ROI, and strategic alignment. The platform includes a PowerBI analytics dashboard for tracking idea performance and supports data-driven decision-making for strategic innovation.'
     },
     {
       name: 'Vernon Clapp IDEA Competition Semifinalist',
@@ -48,11 +52,11 @@ export class ResumeComponent implements AfterViewInit {
     },
     {
       name: 'Luddy Hackathon Third Edition Winner',
-      description: 'Won the said hackathon for developing the Indiana Toxicity Watch platform, an interactive tool that tracks toxic chemical exposure, correlates health risks, and provides data-driven insights to help Indiana residents and policymakers make informed decisions on environmental health.'
+      description: 'Developed Indiana Toxicity Watch platform, an interactive tool that tracks toxic chemical exposure, correlates health risks, and provides data-driven insights to help Indiana residents and policymakers make informed decisions on environmental health.'
     },
     {
       name: 'MLH Hoya Hacks Google Cloud Track Winner',
-      description: 'Won the said hackathon for developing a machine learning-based diagnostic tool that analyzes user symptoms to predict potential diseases, offers precautionary measures, and provides nearby medical facility locations.'
+      description: 'Developed a machine learning-based diagnostic tool that analyzes user symptoms to predict potential diseases, offers precautionary measures, and provides nearby medical facility locations.'
     },
     {
       name: 'Typing Competition Luddy (x2)',
@@ -61,6 +65,8 @@ export class ResumeComponent implements AfterViewInit {
   ];
 
   projects: Project[] = [
+    {id:16, name:'Widenet', year: 2026, summary: 'Lightweight PWA that helps IU students quickly locate the nearest available printers across multiple campuses', description: 'lorem ipsum', url: 'https://widenet.vercel.app/', pictures: ['assets/hp.png','assets/hp-pwa.png'], tags: ['React', 'PWA', 'Firebase', 'Geolocation', 'Python','Copilot']},
+    {id:15, name:'Strike3', year: 2026, summary: 'Lightweight PWA that helps IU students quickly locate the nearest available printers across multiple campuses', description: 'lorem ipsum', url: 'https://strike3-hackathon.vercel.app/', pictures: ['assets/hp.png','assets/hp-pwa.png'], tags: ['React', 'PWA', 'Firebase', 'Geolocation', 'Python','Copilot']},
     {id:14, name:'Hoosier Prints', year: 2026, summary: 'Lightweight PWA that helps IU students quickly locate the nearest available printers across multiple campuses', description: 'lorem ipsum', url: 'https://hoosier-prints.web.app/', pictures: ['assets/hp.png','assets/hp-pwa.png'], tags: ['React', 'PWA', 'Firebase', 'Geolocation', 'Python','Copilot']},
     {id:13, name:'SoftLight Agent', year: 2025, summary: 'AI-powered web automation system achieving 8x faster task completion through intelligent UI sequence generation, reducing manual data entry time from hours to minutes', description: 'lorem ipsum', url: 'https://github.com/suhaasbadada/softlight_agent', pictures: ['assets/sl.mp4'], tags:['FastAPI','Playwright','Groq API','Automation']},
     {id:12, name:'MailMart*', year: 2025, summary: 'Smart email offer storefront delivering 40% increase in deal discovery rates by intelligently categorizing promotional emails, helping users save time and find better deals', description: 'lorem ipsum', url: 'https://mailmart.vercel.app/', pictures: [], tags:['FastAPI','NextJs','PostgreSQL']},
